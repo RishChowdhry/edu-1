@@ -1,0 +1,15 @@
+name: Edu
+type: theme
+description: 'Edu platform theme'
+core: 8.x
+libraries:
+  - edu/global-styling
+  - edu/bootstrap-base
+
+base theme: false
+
+regions:
+ header: Header
+ content: Content
+ footer: Footer
+

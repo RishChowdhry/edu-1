@@ -1,0 +1,18 @@
+{{ attach_library('edu/pagepilling-base') }}
+<div class="page-wrapper" id="pagepiling">
+{% if page.header %}
+<header>
+    {{ page.header }}
+</header>
+{% endif %}
+
+    {{ page.content }}
+
+{% if page.footer %}
+
+<footer>
+    {{ page.footer }}
+</footer>
+
+{% endif %}
+</div>

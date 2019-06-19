@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ *  Pagepiling structure
+ * @ingroup themeable
+ */
+#}
+
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+{% for row in rows %}
+  {%
+    set row_classes = [
+      'section',
+      'f-' ~ loop.index
+
+    ]
+  %}
+
+  <div{{ row.attributes.addClass(row_classes) }} id="section{{loop.index}}">
+    <div class="bg"></div>
+    <div class="info-details">
+        {{- row.content -}}
+    </div>
+  </div>
+{% endfor %}

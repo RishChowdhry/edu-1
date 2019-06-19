@@ -1,0 +1,21 @@
+global-styling:
+   css:
+    theme:
+      css/styles.css : {}
+   js:
+     js/main.js : {}
+bootstrap-base:
+   css:
+    theme:
+      bootstrap/css/bootstrap.css : {}
+   js:
+     bootstrap/js/bootstrap.js : {}
+   dependencies:
+    - core/jquery
+pagepilling-base:
+    css:
+      theme:
+        pagepiling/pagepiling.css : {}
+    js:
+     pagepiling/pagepiling.js : {}
+
