@@ -1,0 +1,99 @@
+jquery.validate:
+  remote: https://github.com/jquery-validation/jquery-validation
+  version: 1.15.0
+  license:
+    name: MIT License
+    url: https://github.com/jquery-validation/jquery-validation/blob/master/LICENSE.md
+    gpl-compatible: true
+  js:
+    /libraries/jquery-validation/dist/jquery.validate.js: {}
+  dependencies:
+    - core/jquery
+
+tooltipster:
+  remote: https://github.com/iamceege/tooltipster/
+  version: 4.2.6
+  license:
+    name: MIT License
+    url: https://github.com/iamceege/tooltipster/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/tooltipster/dist/js/tooltipster.bundle.js: {}
+  css:
+    layout:
+      /libraries/tooltipster/dist/css/tooltipster.bundle.css: {}
+  dependencies:
+    - core/jquery
+
+moment:
+  remote: https://github.com/moment/moment
+  version: 2.17.1
+  license:
+    name: MIT License
+    url: https://github.com/moment/moment/blob/develop/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/moment/min/moment.min.js: {}
+
+fullcalendar:
+  remote: https://github.com/arshaw/fullcalendar
+  version: 3.1.0
+  license:
+    name: MIT License
+    url: https://github.com/fullcalendar/fullcalendar/blob/master/LICENSE.txt
+    gpl-compatible: true
+  js:
+    /libraries/fullcalendar/dist/fullcalendar.js: {}
+  css:
+    layout:
+      /libraries/fullcalendar/dist/fullcalendar.css: {}
+  dependencies:
+    - appointments/moment
+
+appointments_backend_calendar:
+  version: 1.0.0
+  js:
+    assets/js/appointments_backend.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings
+    - core/drupal.system
+    - core/jquery.ui.dialog
+    - core/jquery.once
+    - appointments/fullcalendar
+    - appointments/jquery.validate
+
+appointments_frontend_calendar:
+  version: 1.0.0
+  js:
+    assets/js/appointments_frontend.js: {}
+  css:
+    theme:
+      assets/css/appointments.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings
+    - core/drupal.system
+    - core/jquery.ui.dialog
+    - core/jquery.once
+    - appointments/fullcalendar
+    - appointments/jquery.validate
+    - appointments/tooltipster
+
+appointments_frontend_calendar.fullcalendar.overrides:
+  version: 1.0.0
+  css:
+    theme:
+      assets/css/appointments.fullcalendar.overrides.css: {}
+  dependencies:
+    - appointments/appointments_frontend_calendar
+
+
+appointments_frontend_calendar.fullcalendar.customize:
+  version: 1.0.0
+  js:
+    assets/js/appointments_frontend_customize.js: {}
+  dependencies:
+    - appointments/appointments_frontend_calendar

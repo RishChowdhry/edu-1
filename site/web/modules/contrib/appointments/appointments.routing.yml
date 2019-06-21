@@ -1,0 +1,120 @@
+appointments.appointments_configuration_form:
+  path: 'admin/config/system/appointments'
+  defaults:
+    _form: '\Drupal\appointments\Form\AppointmentsConfigurationForm'
+    _title: 'Appointments Configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+appointments.node.appointments_management:
+  path: '/node/{node}/appointments_management'
+  defaults:
+    _title: 'Appointments'
+    _controller: '\Drupal\appointments\Controller\AppointmentsManagementController::appointmentListContent'
+  requirements:
+    _permission: 'manage appointments'
+    _appointments_management_access_checker: 'TRUE'
+    node: \d+
+  options:
+    _admin_route: TRUE
+
+appointments.node.appointments_management.availability:
+  path: '/node/{node}/appointments_management/availability'
+  defaults:
+    _title: 'Availability'
+    _controller: '\Drupal\appointments\Controller\AppointmentsManagementController::appointmentAvailabilityContent'
+  requirements:
+    _permission: 'manage appointments'
+    _appointments_management_access_checker: 'TRUE'
+    node: \d+
+  options:
+    _admin_route: TRUE
+
+appointments.node.appointments_management.configure:
+  path: '/node/{node}/appointments_management/configure'
+  defaults:
+    _title: 'Configure'
+    _controller: '\Drupal\appointments\Controller\AppointmentsManagementController::appointmentConfigureContent'
+  requirements:
+    _permission: 'manage appointments'
+    _appointments_management_access_checker: 'TRUE'
+    node: \d+
+  options:
+    _admin_route: TRUE
+
+appointments.node.appointments_management.availability.get:
+  path: '/node/{node}/appointments_management/availability/get'
+  defaults:
+    _controller: '\Drupal\appointments\Controller\AppointmentsManagementAvailabilityController::getAvailability'
+  methods:  [GET]
+  requirements:
+    _permission: 'manage appointments'
+    _appointments_management_access_checker: 'TRUE'
+    node: \d+
+
+appointments.node.appointments_management.availability.add:
+  path: '/node/{node}/appointments_management/availability/add/{date}'
+  defaults:
+    _controller: '\Drupal\appointments\Controller\AppointmentsManagementAvailabilityController::addAvailability'
+  methods:  [POST]
+  requirements:
+    _permission: 'manage appointments'
+    _appointments_management_access_checker: 'TRUE'
+    node: \d+
+
+appointments.node.appointments_calendar.appointment:
+  path: 'node/{node}/appointments_calendar'
+  defaults:
+    _controller: '\Drupal\appointments\Controller\AppointmentsCalendarController::getAppointments'
+  requirements:
+    _permission: 'access content'
+    node: \d+
+
+appointments.node.appointments_calendar.appointment.hours:
+  path: 'node/{node}/appointments_calendar/{date}'
+  defaults:
+    _controller: '\Drupal\appointments\Controller\AppointmentsCalendarController::getAppointmentHours'
+  requirements:
+    _permission: 'access content'
+    node: \d+
+
+appointments.node.appointments_calendar.appointment.hours.form:
+  path: 'node/{node}/appointments_calendar/{date}/form'
+  defaults:
+    _controller: '\Drupal\appointments\Controller\AppointmentsCalendarController::getAppointmentForm'
+  requirements:
+    _permission: 'access content'
+    node: \d+
+
+appointments.appointment.confirm:
+  path: 'appointment/{appointment}/confirm'
+  defaults:
+    _form: '\Drupal\appointments\Form\AppointmentConfirmForm'
+    _title: 'Confirm'
+  requirements:
+    _permission: 'manage appointments'
+    appointment: \d+
+  options:
+    _admin_route: TRUE
+
+appointments.appointment.delete:
+  path: 'appointment/{appointment}/delete'
+  defaults:
+    _form: '\Drupal\appointments\Form\AppointmentDeleteForm'
+    _title: 'Delete'
+  requirements:
+    _permission: 'manage appointments'
+    appointment: \d+
+  options:
+    _admin_route: TRUE
+
+appointments.appointment.reject:
+  path: 'appointment/{appointment}/reject'
+  defaults:
+    _form: '\Drupal\appointments\Form\AppointmentRejectForm'
+    _title: 'Reject'
+  requirements:
+    _permission: 'manage appointments'
+    appointment: \d+
+  options:
+    _admin_route: TRUE

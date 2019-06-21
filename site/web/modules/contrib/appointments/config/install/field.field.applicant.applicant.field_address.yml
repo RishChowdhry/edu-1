@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+  - field.storage.applicant.field_address
+  module:
+  - appointments
+id: applicant.applicant.field_address
+field_name: field_address
+entity_type: applicant
+bundle: applicant
+label: Address
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

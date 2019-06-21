@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - appointments
+    - content_moderation
+_core:
+  default_config_hash: 9qrgJRdkLgsM9XhMra6sHUiFZetgPY3uHUlLDoKUuhs
+id: appointments
+label: Appointments
+type: content_moderation
+type_settings:
+  states:
+    deleted:
+      published: false
+      default_revision: false
+      label: Deleted
+      weight: 3
+    draft:
+      published: false
+      default_revision: false
+      label: Requested
+      weight: 0
+    published:
+      published: true
+      default_revision: true
+      label: Confirmed
+      weight: 1
+    rejected:
+      published: false
+      default_revision: false
+      label: Rejected
+      weight: 2
+  transitions:
+    confirm:
+      label: Confirm
+      from:
+        - draft
+        - published
+      to: published
+      weight: 3
+    delete:
+      label: Delete
+      from:
+        - deleted
+        - draft
+        - published
+        - rejected
+      to: deleted
+      weight: 5
+    reject:
+      label: Reject
+      from:
+        - draft
+        - rejected
+      to: rejected
+      weight: 2
+    request:
+      label: Request
+      from:
+      - draft
+      to: draft
+      weight: 4
+  entity_types:
+    appointment:
+      - appointment

@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present Backoffice Availability calendar.
+ *
+ * Available variables:
+ * - node:
+ * - note:
+ * - hours:
+ * - repeat_interval:
+ * - repeat_checkbox_label:
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('appointments/jquery.validate') }}
+{{ attach_library('appointments/moment') }}
+{{ attach_library('appointments/fullcalendar') }}
+{{ attach_library('appointments/appointments_backend_calendar') }}
+
+<br/>
+<br/>
+<div style="display: none" id="appointments-loader">Loading...</div>
+<div id='calendar' style="width:60%;float:left;margin-right:50px;"></div>
+<div style="width:30%;float:left;margin-top: 35px;">
+
+  {{ note }}
+
+</div>
+<div id="dialog" title="" style="display:none">
+  <form>
+    <label for="repeat" class="control-label">
+      <input type="checkbox" id="repeat"/>
+      {{ repeat_checkbox_label }}
+    </label>
+
+    <fieldset id="hours">
+      {% for hour in hours %}
+
+        {% set start = hour[0]|date("H:i") %}
+        {% set end = hour[1]|date("H:i") %}
+
+      <input type="checkbox" class="appointments-hour"
+             data-start="{{ start }}"/> {{ start }} > {{ end }}
+      <br/>
+      {% endfor %}
+    </fieldset>
+
+    <input type="submit" id="save" value="{{ "Save"|t }}"/>
+    <input type="button" id="cancel" value="{{ "Cancel"|t }}"/>
+  </form>
+</div>

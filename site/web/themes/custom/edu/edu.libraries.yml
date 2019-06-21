@@ -18,4 +18,5 @@ pagepilling-base:
         pagepiling/pagepiling.css : {}
     js:
      pagepiling/pagepiling.js : {}
+     pagepiling/initiate.js : {}
 

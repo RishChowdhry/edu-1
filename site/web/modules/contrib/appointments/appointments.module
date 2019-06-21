@@ -1,0 +1,91 @@
+<?php
+
+/**
+ * @file
+ * Contains appointments.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_help().
+ */
+function appointments_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the appointments module.
+    case 'help.page.appointments':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides an interface to add appointments to nodes.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme.
+ */
+function appointments_theme() {
+  return [
+    'appointments_backend_calendar' => [
+      'variables' => [
+        'node' => NULL,
+        'note' => NULL,
+        'hours' => [],
+        'repeat_interval' => NULL,
+        'repeat_checkbox_label' => NULL,
+      ],
+      'template' => 'appointments-backend-calendar',
+    ],
+    'appointments_frontend_calendar' => [
+      'variables' => [
+        'node' => NULL,
+      ],
+      'template' => 'appointments-frontend-calendar',
+    ],
+    'appointments_frontend_hours' => [
+      'variables' => [
+        'hours' => NULL,
+        'day' => NULL
+      ],
+      'template' => 'appointments-frontend-hours',
+    ],
+    'appointments_frontend_form' => [
+      'render element' => 'form',
+      'variables' => [
+        'form' => NULL,
+        'hours' => NULL,
+        'day' => NULL,
+        'start' => NULL,
+        'end' => NULL,
+        'front_office' => NULL,
+        'address' => NULL,
+      ],
+      'template' => 'appointments-frontend-form',
+    ],
+    'appointments_room_manager_email' => [
+      'variables' => [
+        'show_acceptance_url' => FALSE
+      ],
+      'template' => 'appointments-room-manager-email',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_node_view.
+ */
+function appointments_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  \Drupal::service('appointments.form_alter')->appointmentsNodeView($build, $entity, $display, $view_mode);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function appointments_mail($key, &$message, $params) {
+  $message['subject'] = $params['subject'];
+  $message['body'][] = $params['body'];
+}

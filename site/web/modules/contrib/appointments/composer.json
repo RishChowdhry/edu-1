@@ -1,0 +1,83 @@
+{
+  "name": "drupal/appointments",
+  "description": "Provides an interface to add appointments to nodes.",
+  "type": "drupal-module",
+  "authors": [
+    {
+      "name": "Luca Lusso",
+      "email": "lussoluca@gmail.com",
+      "homepage": "https://github.com/lussoluca",
+      "role": "Maintainer"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "require": {
+    "composer/installers": "^1.2",
+    "roomify/bat": "1.2.0",
+    "jquery-validation/jquery-validation": "1.15.0",
+    "moment/moment": "2.17.1",
+    "arshaw/fullcalendar": "3.1.0",
+    "iamceege/tooltipster": "4.2.6"
+  },
+  "extra": {
+    "installer-paths": {
+        "web/libraries/{$name}": [
+        "type:drupal-library"
+      ]
+    }
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "jquery-validation/jquery-validation",
+        "version": "1.15.0",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/jquery-validation/jquery-validation",
+          "type": "git",
+          "reference": "1.15.0"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "moment/moment",
+        "version": "2.17.1",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/moment/moment",
+          "type": "git",
+          "reference": "2.17.1"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "arshaw/fullcalendar",
+        "version": "3.1.0",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/arshaw/fullcalendar",
+          "type": "git",
+          "reference": "v3.1.0"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "iamceege/tooltipster",
+        "version": "4.2.6",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/iamceege/tooltipster/",
+          "type": "git",
+          "reference": "4.2.6"
+        }
+      }
+    }
+  ]
+}

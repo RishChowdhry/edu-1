@@ -1,0 +1,9 @@
+content_type: ''
+privacy_text: ''
+privacy_text_format: 'basic_html'
+user_profile_field_name: ''
+user_profile_field_surname: ''
+first_day_week: 0
+appointments_repeat_interval: ''
+appointments_slot_duration: 'PT59M'
+appointments_slot_increment: 'PT1H'

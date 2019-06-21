@@ -1,0 +1,22 @@
+{#
+/**
+ * @file applicant.html.twig
+ * Default theme implementation to present Applicant data.
+ *
+ * This template is used when viewing Applicant pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_applicant()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('applicant') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

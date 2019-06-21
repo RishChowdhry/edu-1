@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation to render appointments room manager email.
+ *
+ * Available variables:
+ *  - show_acceptance_url:
+ *
+ * @ingroup themeable
+ */
+#}
+
+Applicant: [appointment:applicant:entity:fullname]
+Email: [appointment:applicant:entity:email]
+Note: [appointment:note]
+
+Request details: [site:url][appointment:url]
+{% if how_acceptance_url %}
+
+To accept the request: [site:url]appointment/[appointment:id]/confirm
+
+To deny the request: [site:url]appointment/[appointment:id]/reject (the request will be canceled and will be sent an email to the applicant)
+{% endif %}
+
+To delete the request: [site:url]appointment/[appointment:id]/delete (warning, will be asked to confirm cancellation and will not sent anything to the applicant)

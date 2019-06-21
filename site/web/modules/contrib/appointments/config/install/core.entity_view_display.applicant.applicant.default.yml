@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+  - field.field.applicant.applicant.field_address
+  - field.field.applicant.applicant.field_birth_date
+  - field.field.applicant.applicant.field_phone
+  module:
+  - appointments
+  - datetime
+id: applicant.applicant.default
+targetEntityType: applicant
+bundle: applicant
+mode: default
+content:
+  email:
+    label: inline
+    type: email_mailto
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_address:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_birth_date:
+    weight: 3
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_phone:
+    weight: 6
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  fullname:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  name:
+    label: hidden
+    type: string
+    weight: 1
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  surname:
+    label: hidden
+    type: string
+    weight: 2
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  uid: true

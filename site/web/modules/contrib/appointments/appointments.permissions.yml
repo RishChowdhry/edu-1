@@ -1,0 +1,85 @@
+manage appointments:
+  title: 'Manage appointments'
+  description: 'Manage appointments'
+  restrict access: true
+  
+add room configurations entities:
+  title: 'Create new Room configurations entities'
+
+administer room configurations entities:
+  title: 'Administer Room configurations entities'
+  description: 'Allow to access the administration form to configure Room configurations entities.'
+  restrict access: true
+
+delete room configurations entities:
+  title: 'Delete Room configurations entities'
+
+edit room configurations entities:
+  title: 'Edit Room configurations entities'
+
+view published room configurations entities:
+  title: 'View published Room configurations entities'
+
+view unpublished room configurations entities:
+  title: 'View unpublished Room configurations entities'
+
+add applicant entities:
+  title: 'Create new Applicant entities'
+
+administer applicant entities:
+  title: 'Administer Applicant entities'
+  description: 'Allow to access the administration form to configure Applicant entities.'
+  restrict access: true
+
+delete applicant entities:
+  title: 'Delete Applicant entities'
+
+edit applicant entities:
+  title: 'Edit Applicant entities'
+
+view published applicant entities:
+  title: 'View published Applicant entities'
+
+view unpublished applicant entities:
+  title: 'View unpublished Applicant entities'
+
+view all applicant revisions:
+  title: 'View all Applicant revisions'
+
+revert all applicant revisions:
+  title: 'Revert all Applicant revisions'
+  description: 'Role requires permission <em>view Applicant revisions</em> and <em>edit rights</em> for applicant entities in question or <em>administer applicant entities</em>.'
+
+delete all applicant revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Applicant revisions</em> and <em>delete rights</em> for applicant entities in question or <em>administer applicant entities</em>.'
+add appointment entities:
+  title: 'Create new Appointment entities'
+
+administer appointment entities:
+  title: 'Administer Appointment entities'
+  description: 'Allow to access the administration form to configure Appointment entities.'
+  restrict access: true
+
+delete appointment entities:
+  title: 'Delete Appointment entities'
+
+edit appointment entities:
+  title: 'Edit Appointment entities'
+
+view published appointment entities:
+  title: 'View published Appointment entities'
+
+view unpublished appointment entities:
+  title: 'View unpublished Appointment entities'
+
+view all appointment revisions:
+  title: 'View all Appointment revisions'
+
+revert all appointment revisions:
+  title: 'Revert all Appointment revisions'
+  description: 'Role requires permission <em>view Appointment revisions</em> and <em>edit rights</em> for appointment entities in question or <em>administer appointment entities</em>.'
+
+delete all appointment revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Appointment revisions</em> and <em>delete rights</em> for appointment entities in question or <em>administer appointment entities</em>.'

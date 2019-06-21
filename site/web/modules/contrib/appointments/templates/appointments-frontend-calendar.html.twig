@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present frontend Availability calendar.
+ *
+ * Available variables:
+ * - node:
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('appointments/jquery.validate') }}
+{{ attach_library('appointments/moment') }}
+{{ attach_library('appointments/fullcalendar') }}
+{{ attach_library('appointments/appointments_frontend_calendar') }}
+{{ attach_library('appointments/appointments_frontend_calendar.fullcalendar.overrides') }}
+{{ attach_library('appointments/appointments_frontend_calendar.fullcalendar.customize') }}
+
+<h3>{{ "Request an appointment"|t }}:</h3>
+<ul>
+  <li>{{ "Gray: not available"|t }}</li>
+  <li>{{ "Green: available|t" }}</li>
+</ul>
+<p>{{ "WARNING: availability vary continuously: it is recommended to come back often on these pages to check for updates."|t }}</p>
+
+<div class="appointments-wizard js-appointments">
+  <div id='calendar' class="appointments-wizard__panel--calendar">
+    <h2 class="appointments-wizard__step-title">1 - {{ "Choose the day"|t }}:</h2>
+    <div class="js-calendar"></div>
+  </div>
+  <div id='day' class="appointments-wizard__panel--day is-hidden is-shifted--right"></div>
+  <div id='form' class="appointments-wizard__panel--form is-hidden is-shifted--right"></div>
+</div>

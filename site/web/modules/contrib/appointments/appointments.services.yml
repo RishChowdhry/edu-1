@@ -1,0 +1,41 @@
+services:
+  # Logger
+  logger.channel.appointments:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['appointments']
+
+  appointments.appointments_management_access_checker:
+    class: Drupal\appointments\Access\AppointmentsManagementAccessCheck
+    arguments: ['@entity_type.manager', '@config.factory', '@logger.channel.appointments']
+    tags:
+      - { name: access_check, applies_to: _appointments_management_access_checker }
+
+  # Room configuration manager.
+  appointments.room_configuration_manager:
+    class: Drupal\appointments\RoomConfigurationsManager
+    arguments: ['@entity_type.manager', '@logger.channel.appointments']
+
+  # Calendar Manager.
+  appointments.calendar_manager:
+    class: Drupal\appointments\CalendarManager
+    arguments: ['@config.factory','@logger.channel.appointments','@appointments.room_configuration_manager' ]
+
+  # Appointment Manager.
+  appointments.appointments_manager:
+    class: Drupal\appointments\AppointmentsManager
+    arguments: ['@config.factory', '@logger.channel.appointments', '@appointments.room_configuration_manager', '@appointments.calendar_manager', '@entity_type.manager', '@appointments.email_manager' ]
+
+  # Appointment Transaction Manager.
+  appointments.appointments_transaction_manager:
+    class: Drupal\appointments\AppointmentsTransactionManager
+    arguments: ['@entity_type.manager','@current_user','@content_moderation.state_transition_validation' ]
+
+  # Mail Manager
+  appointments.email_manager:
+    class: Drupal\appointments\EmailManager
+    arguments: ['@language_manager','@appointments.room_configuration_manager', '@token','@renderer','@plugin.manager.mail' ]
+
+  appointments.form_alter:
+    class: Drupal\appointments\AppointmentsFormAlter
+    arguments: ['@config.factory', '@logger.channel.appointments']

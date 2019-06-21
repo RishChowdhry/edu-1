@@ -1,0 +1,15 @@
+entity.room_configurations.add_form:
+  route_name: entity.room_configurations.add_form
+  title: 'Add Room configurations'
+  appears_on:
+    - entity.room_configurations.collection
+entity.applicant.add_form:
+  route_name: entity.applicant.add_form
+  title: 'Add Applicant'
+  appears_on:
+    - entity.applicant.collection
+entity.appointment.add_form:
+  route_name: entity.appointment.add_form
+  title: 'Add Appointment'
+  appears_on:
+    - entity.appointment.collection

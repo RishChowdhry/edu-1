@@ -1,0 +1,255 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function appointments_schema() {
+  $schema = [];
+
+  $machine_name = 'availability_event';
+
+  $schema['bat_event_' . $machine_name . '_day_state'] = [
+    'description' => 'Holds the state of each unit for a given day',
+    'fields' => bat_event_generate_day_schema_fields(),
+    'indexes' => [
+      'unit_id' => ['unit_id'],
+      'year' => ['year'],
+      'month' => ['month'],
+    ],
+    'unique keys' => [
+      'month_key' => ['unit_id', 'year', 'month'],
+    ],
+    'foreign keys' => [
+      'unit_id' => [
+        'table' => 'bat_units',
+        'columns' => ['unit_id' => 'unit_id'],
+      ],
+    ],
+  ];
+
+  $schema['bat_event_' . $machine_name . '_day_event'] = [
+    'description' => 'Holds the event that determined the state of a unit',
+    'fields' => bat_event_generate_day_schema_fields(),
+    'indexes' => [
+      'unit_id' => ['unit_id'],
+      'year' => ['year'],
+      'month' => ['month'],
+    ],
+    'unique keys' => [
+      'month_key' => ['unit_id', 'year', 'month'],
+    ],
+    'foreign keys' => [
+      'unit_id' => [
+        'table' => 'bat_units',
+        'columns' => ['unit_id' => 'unit_id'],
+      ],
+    ],
+  ];
+
+  $schema['bat_event_' . $machine_name . '_hour_state'] = [
+    'description' => 'Holds the state of the unit',
+    'fields' => bat_event_generate_hour_schema_fields(),
+    'indexes' => [
+      'unit_id' => ['unit_id'],
+      'year' => ['year'],
+      'month' => ['month'],
+    ],
+    'unique keys' => [
+      'day_key' => ['unit_id', 'year', 'month', 'day'],
+    ],
+    'foreign keys' => [
+      'unit_id' => [
+        'table' => 'bat_units',
+        'columns' => ['unit_id' => 'unit_id'],
+      ],
+    ],
+  ];
+
+  $schema['bat_event_' . $machine_name . '_hour_event'] = [
+    'description' => 'Holds the event that determined the state of a unit',
+    'fields' => bat_event_generate_hour_schema_fields(),
+    'indexes' => [
+      'unit_id' => ['unit_id'],
+      'year' => ['year'],
+      'month' => ['month'],
+    ],
+    'unique keys' => [
+      'day_key' => ['unit_id', 'year', 'month', 'day'],
+    ],
+    'foreign keys' => [
+      'unit_id' => [
+        'table' => 'bat_units',
+        'columns' => ['unit_id' => 'unit_id'],
+      ],
+    ],
+  ];
+
+  $schema['bat_event_' . $machine_name . '_minute_state'] = [
+    'description' => 'Holds the state of the unit',
+    'fields' => bat_event_generate_minute_schema_fields(),
+    'indexes' => [
+      'unit_id' => ['unit_id'],
+      'year' => ['year'],
+      'month' => ['month'],
+    ],
+    'unique keys' => [
+      'day_key' => ['unit_id', 'year', 'month', 'day', 'hour'],
+    ],
+    'foreign keys' => [
+      'unit_id' => [
+        'table' => 'bat_units',
+        'columns' => ['unit_id' => 'unit_id'],
+      ],
+    ],
+  ];
+
+  $schema['bat_event_' . $machine_name . '_minute_event'] = [
+    'description' => 'Holds the event that determined the state of a unit',
+    'fields' => bat_event_generate_minute_schema_fields(),
+    'indexes' => [
+      'unit_id' => ['unit_id'],
+      'year' => ['year'],
+      'month' => ['month'],
+    ],
+    'unique keys' => [
+      'day_key' => ['unit_id', 'year', 'month', 'day', 'hour'],
+    ],
+    'foreign keys' => [
+      'unit_id' => [
+        'table' => 'bat_units',
+        'columns' => ['unit_id' => 'unit_id'],
+      ],
+    ],
+  ];
+
+  return $schema;
+}
+
+function bat_event_generate_day_schema_fields() {
+  $fields = [
+    'unit_id' => [
+      'description' => 'Identifier for a unit.',
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+    ],
+    'year' => [
+      'description' => 'The calendar year for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ],
+    'month' => [
+      'description' => 'The month for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ],
+  ];
+
+  for ($i = 1; $i <= 31; $i++) {
+    $fields['d' . $i] = [
+      'description' => 'D' . $i,
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ];
+  }
+
+  return $fields;
+}
+
+function bat_event_generate_hour_schema_fields() {
+  $fields = [
+    'unit_id' => [
+      'description' => 'Identifier for a unit.',
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+    ],
+    'year' => [
+      'description' => 'The calendar year for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ],
+    'month' => [
+      'description' => 'The month for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ],
+    'day' => [
+      'description' => 'The day for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ],
+  ];
+
+  for ($i = 0; $i <= 23; $i++) {
+    $fields['h' . $i] = [
+      'description' => 'H' . $i,
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ];
+  }
+
+  return $fields;
+}
+
+function bat_event_generate_minute_schema_fields() {
+  $fields = [
+    'unit_id' => [
+      'description' => 'Identifier for a unit.',
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+    ],
+    'year' => [
+      'description' => 'The calendar year for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ],
+    'month' => [
+      'description' => 'The month for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ],
+    'day' => [
+      'description' => 'The day for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ],
+    'hour' => [
+      'description' => 'The hour for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ],
+  ];
+
+  for ($i = 0; $i <= 59; $i++) {
+    // PHP has no clean way to get the minutes without leading zeros so setting table
+    // fields names to contain the leading zeros to save strangeness in code elsewhere
+    if ($i <= 9) {
+      $m = '0' . $i;
+    }
+    else {
+      $m = $i;
+    }
+
+    $fields['m' . $m] = [
+      'description' => 'M' . $m,
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ];
+  }
+
+  return $fields;
+}

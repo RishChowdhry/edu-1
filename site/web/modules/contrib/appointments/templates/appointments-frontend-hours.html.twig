@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present Frontend availability hours list for a specific day.
+ *
+ * Available variables:
+ * - hours:
+ * - day:
+ *
+ * @ingroup themeable
+ */
+#}
+
+<h2 class="appointments-wizard__step-title">2 - {{ "Choose the time"|t }}:</h2>
+<p class="appointments-wizard__header">{{ "Hours available on"|t }}
+  <time datetime="">{{ day|date('U')|format_date('appointments_date') }}</time>
+</p>
+<table>
+  {% for hour in hours %}
+  <tr>
+    <td data-start="{{ hour.start }}" data-end="{{ hour.end }}" data-end_real="{{ hour.end_real }}" class="{{ hour.status ? 'is-available' : 'is-not-available' }}">
+      from <span class="appointments-date__start">{{ hour.start }}</span> to <span class="appointments-date__start">{{ hour.end }}</span>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<nav class="appointments-wizard__step-nav">
+  <a href="#calendar" id="back-to-calendar" class="button">&lsaquo; {{ "Back (change day)"|t }}</a>
+</nav>

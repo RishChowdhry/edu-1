@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present frontend Availability calendar.
+ *
+ * Available variables:
+ * - form:
+ * - day:
+ * - start:
+ * - end:
+ * - end_real:
+ * - front_office:
+ * - address:
+ *
+ * @ingroup themeable
+ */
+#}
+
+<h2 class="appointments-wizard__step-title">3 - {{ "Send request"|t }}:</h2>
+
+<p class="appointments-wizard__header">{{ "Request an appointment for"|t }}
+  <time datetime="">{{ day|date('U')|format_date('appointments_date') }}</time>
+  </br> {{ "from"|t }} <span class="appointments-date__start">{{ start|date('H:i') }}</span> {{ "to"|t }} <span class="appointments-date__end">{{ end|date('H:i') }}</span></time>
+  {% if front_office %}
+  </br><span>{{ front_office }}</span>
+  {% endif %}
+  {% if address %}
+  </br><span>{{ address }}</span>
+  {% endif %}
+</p>
+
+<div class="appointments-wizard__inner-wrapper">
+  {{ form }}
+</div>
+
+<nav class="appointments-wizard__step-nav">
+  <a href="#day" id="back-to-day" class="button">&lsaquo; {{ "Back (change time)"|t }}</a>
+</nav>

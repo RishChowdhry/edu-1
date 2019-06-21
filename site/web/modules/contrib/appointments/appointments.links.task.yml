@@ -1,0 +1,75 @@
+entity.node.appointments:
+  route_name: appointments.node.appointments_management
+  base_route: entity.node.canonical
+  title: 'Appointments Management'
+
+entity.node.appointments.list:
+  title: 'Appointments'
+  route_name: appointments.node.appointments_management
+  parent_id: entity.node.appointments
+
+entity.node.appointments.availability:
+  title: 'Availability'
+  route_name: appointments.node.appointments_management.availability
+  parent_id: entity.node.appointments
+
+entity.node.appointments.configure:
+  title: 'Configure'
+  route_name: appointments.node.appointments_management.configure
+  parent_id: entity.node.appointments
+
+
+# Applicant routing definition
+applicant.settings_tab:
+  route_name: applicant.settings
+  title: 'Settings'
+  base_route: applicant.settings
+
+entity.applicant.canonical:
+  route_name: entity.applicant.canonical
+  base_route: entity.applicant.canonical
+  title: 'View'
+
+entity.applicant.edit_form:
+  route_name: entity.applicant.edit_form
+  base_route: entity.applicant.canonical
+  title: 'Edit'
+
+entity.applicant.version_history:
+  route_name: entity.applicant.version_history
+  base_route: entity.applicant.canonical
+  title: 'Revisions'
+
+entity.applicant.delete_form:
+  route_name:  entity.applicant.delete_form
+  base_route:  entity.applicant.canonical
+  title: Delete
+  weight: 10
+
+# Appointment routing definition
+appointment.settings_tab:
+  route_name: appointment.settings
+  title: 'Settings'
+  base_route: appointment.settings
+
+entity.appointment.canonical:
+  route_name: entity.appointment.canonical
+  base_route: entity.appointment.canonical
+  title: 'View'
+
+entity.appointment.edit_form:
+  route_name: entity.appointment.edit_form
+  base_route: entity.appointment.canonical
+  title: 'Edit'
+
+entity.appointment.version_history:
+  route_name: entity.appointment.version_history
+  base_route: entity.appointment.canonical
+  title: 'Revisions'
+
+entity.appointment.delete_form:
+  route_name:  entity.appointment.delete_form
+  base_route:  entity.appointment.canonical
+  title: Delete
+  weight: 10
+
