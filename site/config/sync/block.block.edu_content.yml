@@ -1,0 +1,22 @@
+uuid: 4923f792-7716-4cc5-8aea-42a99c280d15
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - edu
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: edu_content
+theme: edu
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

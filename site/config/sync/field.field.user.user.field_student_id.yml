@@ -1,0 +1,36 @@
+uuid: 53a77651-b11e-4464-b451-3350be7c4bc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_student_id
+  module:
+    - file
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form:
+      student: student
+      authenticated: 0
+    user_additional_register_form_required:
+      authenticated: 0
+      student: 0
+id: user.user.field_student_id
+field_name: field_student_id
+entity_type: user
+bundle: user
+label: 'Student ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf png jpg docx doc'
+  max_filesize: 3MB
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

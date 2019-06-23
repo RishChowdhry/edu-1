@@ -1,0 +1,41 @@
+uuid: 6066ea10-50f4-4e7b-84d3-af6fc434e0da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.tutor_profile.field_full_name
+    - field.field.profile.tutor_profile.field_modules_can_teach
+    - field.field.profile.tutor_profile.field_university
+    - profile.type.tutor_profile
+id: profile.tutor_profile.default
+targetEntityType: profile
+bundle: tutor_profile
+mode: default
+content:
+  field_full_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_modules_can_teach:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_university:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+hidden: {  }

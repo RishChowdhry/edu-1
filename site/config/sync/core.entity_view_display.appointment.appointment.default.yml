@@ -1,0 +1,47 @@
+uuid: 7210c9e8-550d-4476-aa22-e3a184a522e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - appointments
+    - user
+id: appointment.appointment.default
+targetEntityType: appointment
+bundle: appointment
+mode: default
+content:
+  applicant:
+    label: hidden
+    type: entity_reference_label
+    weight: 0
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  note:
+    label: above
+    type: basic_string
+    weight: -4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  appointment_node: true
+  end: true
+  slot: true
+  start: true

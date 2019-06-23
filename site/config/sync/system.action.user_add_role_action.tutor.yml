@@ -1,0 +1,14 @@
+uuid: d21e9aa2-c64e-4623-b529-31506b8ba3e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.tutor
+  module:
+    - user
+id: user_add_role_action.tutor
+label: 'Add the Tutor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: tutor

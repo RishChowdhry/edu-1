@@ -1,0 +1,19 @@
+uuid: 5e34f627-4a9e-4375-a09c-bc1543dce69b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_full_name
+    - profile.type.tutor_profile
+id: profile.tutor_profile.field_full_name
+field_name: field_full_name
+entity_type: profile
+bundle: tutor_profile
+label: 'Full Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,29 @@
+uuid: 4e2a9356-ee96-42ef-8b07-4e6e480b777d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_university
+    - profile.type.student_profile
+    - taxonomy.vocabulary.universities
+id: profile.student_profile.field_university
+field_name: field_university
+entity_type: profile
+bundle: student_profile
+label: University
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      universities: universities
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

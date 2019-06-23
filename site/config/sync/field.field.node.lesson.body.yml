@@ -1,0 +1,22 @@
+uuid: 66d67719-0163-4d29-9643-4da9604a3b2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.lesson
+  module:
+    - text
+id: node.lesson.body
+field_name: body
+entity_type: node
+bundle: lesson
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

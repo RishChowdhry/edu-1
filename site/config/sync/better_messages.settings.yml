@@ -1,0 +1,51 @@
+position: center
+vertical: 0
+horizontal: 10
+fixed: 1
+width: 600px
+autoclose: 0
+opendelay: 0.3
+disable_autoclose: 0
+show_countdown: 1
+hover_autoclose: 1
+popin:
+  effect: fadeIn
+  duration: slow
+popout:
+  effect: fadeIn
+  duration: slow
+jquery_ui:
+  draggable: 1
+  resizable: 0
+visibility:
+  message_type:
+    id: message_type
+    message_types:
+      - status
+      - warning
+      - error
+    negate: false
+    context_mapping:
+      better_messages: '@better_messages.context:better_messages'
+  node_type:
+    id: node_type
+    bundles:
+      article: article
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: ''
+    negate: false
+  user_role:
+    id: user_role
+    roles:
+      tutor: tutor
+      student: student
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+_core:
+  default_config_hash: Pw2ELXqyW0bEUY_MdnD9pok5eWjoA2FutauHW4wzHbQ

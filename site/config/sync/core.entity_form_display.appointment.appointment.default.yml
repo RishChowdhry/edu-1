@@ -1,0 +1,44 @@
+uuid: 8b5c5bc4-9392-4745-8768-1480dc349ed5
+langcode: en
+status: true
+dependencies:
+  module:
+    - appointments
+    - inline_entity_form
+id: appointment.appointment.default
+targetEntityType: appointment
+bundle: appointment
+mode: default
+content:
+  applicant:
+    type: inline_entity_form_simple
+    weight: 5
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      override_labels: false
+      collapsible: false
+      collapsed: false
+    region: content
+    third_party_settings: {  }
+  note:
+    type: string_textarea
+    weight: -4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  start:
+    type: datetime_timestamp
+    weight: -4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  appointment_node: true
+  end: true
+  name: true
+  slot: true
+  uid: true

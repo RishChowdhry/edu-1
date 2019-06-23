@@ -1,0 +1,28 @@
+uuid: 07c4caf0-b86f-48da-b4e1-50eaabb71c31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lesson.body
+    - node.type.lesson
+  module:
+    - text
+    - user
+id: node.lesson.default
+targetEntityType: node
+bundle: lesson
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

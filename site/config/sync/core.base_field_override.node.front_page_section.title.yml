@@ -1,0 +1,18 @@
+uuid: 8f58a9a4-fb78-48e6-8adf-a6654d543107
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.front_page_section
+id: node.front_page_section.title
+field_name: title
+entity_type: node
+bundle: front_page_section
+label: 'H2 Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

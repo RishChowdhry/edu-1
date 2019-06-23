@@ -1,0 +1,25 @@
+uuid: dd0f2020-7e1f-4c96-8dd6-ddf4ec1909a0
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - edu
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: edu_branding
+theme: edu
+region: header
+weight: -3
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

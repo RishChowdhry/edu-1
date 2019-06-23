@@ -1,0 +1,29 @@
+uuid: 927fc9be-a613-4f6a-b15e-1e39ffe4df66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_modules_can_teach
+    - profile.type.tutor_profile
+    - taxonomy.vocabulary.modules
+id: profile.tutor_profile.field_modules_can_teach
+field_name: field_modules_can_teach
+entity_type: profile
+bundle: tutor_profile
+label: 'Modules can teach'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      modules: modules
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

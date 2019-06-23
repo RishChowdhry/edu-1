@@ -1,0 +1,44 @@
+uuid: 8cf473b7-8ea8-40d3-88f6-c7f4904ff363
+langcode: en
+status: true
+dependencies:
+  module:
+    - appointments
+    - user
+id: applicant.applicant.default
+targetEntityType: applicant
+bundle: applicant
+mode: default
+content:
+  email:
+    label: above
+    type: email_mailto
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    label: above
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+  surname:
+    label: above
+    type: string
+    weight: 1
+    region: content
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  fullname: true

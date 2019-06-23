@@ -1,0 +1,21 @@
+uuid: 1b80ea22-1cc9-4186-8a22-6aa1a35ee819
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text
+    - node.type.front_page_section
+  module:
+    - text
+id: node.front_page_section.field_text
+field_name: field_text
+entity_type: node
+bundle: front_page_section
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

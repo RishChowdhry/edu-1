@@ -1,0 +1,8 @@
+uuid: 8f09b5e9-0115-4fa8-b096-f717592a61a1
+langcode: en
+status: true
+dependencies: {  }
+name: Universities
+vid: universities
+description: ''
+weight: 0

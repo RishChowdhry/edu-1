@@ -1,0 +1,54 @@
+uuid: 5b904481-d85d-4528-af84-53f7b186f962
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_name
+    - field.field.user.user.field_student_id
+    - field.field.user.user.field_surname
+    - field.field.user.user.user_picture
+  module:
+    - file
+    - user
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_student_id:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_surname:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  contact: true
+  language: true
+  student_profile_profiles: true
+  timezone: true
+  tutor_profile_profiles: true
+  user_picture: true

@@ -1,0 +1,22 @@
+uuid: 38cdd87c-8bb6-4884-a732-fd92391f018f
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - edu
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: edu_help
+theme: edu
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

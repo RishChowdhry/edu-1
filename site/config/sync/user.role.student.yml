@@ -1,0 +1,18 @@
+uuid: b2127598-0a36-4fad-a3fd-20afc7b5f2ac
+langcode: en
+status: true
+dependencies: {  }
+id: student
+label: Student
+weight: 4
+is_admin: null
+permissions:
+  - 'access content'
+  - 'access user profiles'
+  - 'cancel account'
+  - 'create student_profile profile'
+  - 'create terms in universities'
+  - 'submit role application'
+  - 'update own student_profile profile'
+  - 'view any profile'
+  - 'view own student_profile profile'

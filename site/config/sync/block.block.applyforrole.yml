@@ -1,0 +1,26 @@
+uuid: 637d758f-ed33-4018-bd3a-86a9004df4db
+langcode: en
+status: true
+dependencies:
+  module:
+    - apply_for_role
+    - system
+  theme:
+    - edu
+id: applyforrole
+theme: edu
+region: content
+weight: 0
+provider: null
+plugin: 'Apply for roles'
+settings:
+  id: 'Apply for roles'
+  label: 'Apply For Role'
+  provider: apply_for_role
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

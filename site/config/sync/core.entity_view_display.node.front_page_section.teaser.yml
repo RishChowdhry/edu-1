@@ -1,0 +1,22 @@
+uuid: 16e7a64e-6cad-47fd-a38e-4d883b6a784b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.front_page_section.field_h3_tag
+    - node.type.front_page_section
+  module:
+    - user
+id: node.front_page_section.teaser
+targetEntityType: node
+bundle: front_page_section
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_h3_tag: true

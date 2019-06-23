@@ -1,0 +1,30 @@
+uuid: e3712384-4c10-484d-beb7-1f9fb0ed0268
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.student_profile.field_full_name
+    - field.field.profile.student_profile.field_university
+    - profile.type.student_profile
+id: profile.student_profile.default
+targetEntityType: profile
+bundle: student_profile
+mode: default
+content:
+  field_full_name:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_university:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

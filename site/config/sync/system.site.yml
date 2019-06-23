@@ -1,0 +1,14 @@
+uuid: 6218f9e0-12c2-4de7-bfcb-5ec1d59b59b5
+name: 'Edu App'
+mail: vitaliy.webappsolutions@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /front-sections
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

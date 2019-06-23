@@ -1,0 +1,48 @@
+uuid: 953aab0a-03b8-46c1-9932-d6dc55ee2239
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.front_page_section.field_h3_tag
+    - field.field.node.front_page_section.field_section_image_
+    - field.field.node.front_page_section.field_text
+    - node.type.front_page_section
+  module:
+    - image
+    - text
+    - user
+id: node.front_page_section.default
+targetEntityType: node
+bundle: front_page_section
+mode: default
+content:
+  field_h3_tag:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_image_:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_text:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

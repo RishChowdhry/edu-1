@@ -1,0 +1,15 @@
+uuid: 1f2a41d0-8e50-486f-a3bf-2cba1f081191
+langcode: en
+status: true
+dependencies: {  }
+id: tutor_profile
+label: 'Tutor profile'
+multiple: false
+registration: false
+roles:
+  tutor: tutor
+  authenticated: '0'
+  administrator: '0'
+  student: '0'
+allow_revisions: false
+new_revision: false

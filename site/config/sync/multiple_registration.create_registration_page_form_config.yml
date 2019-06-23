@@ -1,0 +1,10 @@
+multiple_registration_hidden_student: 1
+multiple_registration_form_mode_register_student: register
+multiple_registration_form_mode_edit_student: register
+multiple_registration_path_student: register/student
+multiple_registration_url_student: /user/register/student
+multiple_registration_path_tutor: register/tutor
+multiple_registration_url_tutor: /user/register/tutor
+multiple_registration_hidden_tutor: 1
+multiple_registration_form_mode_register_tutor: register
+multiple_registration_form_mode_edit_tutor: register

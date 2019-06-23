@@ -1,0 +1,31 @@
+uuid: 9fe4b6b6-5a08-44a5-9b06-fe0855fa50e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.student_profile.field_full_name
+    - field.field.profile.student_profile.field_university
+    - profile.type.student_profile
+id: profile.student_profile.default
+targetEntityType: profile
+bundle: student_profile
+mode: default
+content:
+  field_full_name:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_university:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden: {  }

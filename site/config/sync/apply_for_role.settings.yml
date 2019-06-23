@@ -1,0 +1,16 @@
+multiple_roles_per_app: '0'
+allow_user_message_with_app: '0'
+apply_for_role_roles:
+  tutor: tutor
+  administrator: 0
+user_apply_form_description: ''
+send_email_to_admin: 0
+admin_email_addresses: ''
+admin_email_subject: 'New role application.'
+admin_email_body: 'An application has been submit by %USER for %ROLE.'
+send_user_approval_email: 0
+send_user_approval_subject: 'Your role application has been approved.'
+send_user_approval_body: 'Your role application has been approved at %URL for %ROLE.'
+send_user_deny_email: 0
+send_user_deny_subject: 'Your role application has been denied.'
+send_user_deny_body: 'Your role application has been denied at %URL for %ROLE.'
