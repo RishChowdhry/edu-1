@@ -10,7 +10,7 @@
 			//after leaving section 2
 			if(index == 1 && direction =='down'){
                 //alert("Going to section 2!");
-                $('header').css({'display':'block'});
+                $('header').css({'display':'inline-grid'});
                 $('footer').css({'color':'black'});
 
 			}

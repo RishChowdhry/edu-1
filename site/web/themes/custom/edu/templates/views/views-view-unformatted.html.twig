@@ -19,9 +19,10 @@
   %}
 
   <div{{ row.attributes.addClass(row_classes) }} id="section{{loop.index}}">
-    <div class="bg"></div>
-    <div class="info-details">
+
+    <div class="container info-details">
         {{- row.content -}}
     </div>
+    <div class="bg"></div>
   </div>
 {% endfor %}

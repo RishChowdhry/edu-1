@@ -4,11 +4,27 @@
 .pp-section {top: 0;}
 #pp-nav {z-index: 9!important;}
 nav {z-index: 9;
-background: none;}
+background: none;
+margin:10px auto;}
+nav.toolbar-bar {
+    margin: 0;
+}
 
 .path-frontpage header {display: none;}
 header {
+    display: inline-grid;
+    grid-template-columns: 200px auto 200px;
     position: absolute;
+    width: 100%;
+    z-index:10;
+    margin-bottom: 30px;
+
+}
+#block-edu-branding img {
+
+    width: 125px;
+    height: auto;
+
 
 }
 .hide {
@@ -199,8 +215,8 @@ height: 100px;
 .f-2, .f-3, .f-4, .f-5, .f-6 {
 background: white;}
 .f-2 .bg {
--webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 75%);
-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 75%);
+-webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 85%);
+clip-path: polygon(0 0, 100% 0, 100% 40%, 0 85%);
 background: #97D083;
 width: 100%;
 height: 100%;
@@ -219,7 +235,7 @@ z-index: -1;
 
 .f-2 h2, .f-3 h2, .f-4 h2, .f-5 h2, .f-6 h2 {
     font-size: 3.5em;
-    width: 50%;
+    width: 75%;
    text-shadow: 2px 2px 2px rgba(0,0,0,0.1);
 }
 .f-2 h3, .f-3 h3, .f-4 h3, .f-5 h3, .f-6 h3 {
@@ -228,13 +244,14 @@ z-index: -1;
 
 }
 .f-2 p, .f-3 p,.f-4 p,.f-5 p,.f-6 p {
-    width: 35%;
+    width: 65%;
     font-size: 1.3em;
     color: white;
     margin-bottom: 30px;
     display: flex;
     clear: both;
     margin: 0;
+    padding-bottom: 60px;
 
 }
 .f-2 .separate, .f-3 .separate, .f-4 .separate, .f-5 .separate, .f-6 .separate {border: solid 1px white; width: 200px;}
@@ -247,8 +264,8 @@ z-index: -1;
 
 .f-3 .bg {
     background: #f54fc3;
--webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 75%);
-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 75%);
+-webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 85%);
+clip-path: polygon(0 0, 100% 0, 100% 40%, 0 85%);
 width: 100%;
 height: 100%;
 margin: 0;
@@ -259,8 +276,8 @@ z-index: -1;
 .f-4 .bg {
 
 background: olivedrab;
--webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 75%);
-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 75%);
+-webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 85%);
+clip-path: polygon(0 0, 100% 0, 100% 40%, 0 85%);
 width: 100%;
 height: 100%;
 margin: 0;
@@ -270,8 +287,8 @@ z-index: -1;
 }
 .f-5 .bg {
     background: salmon;
--webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 75%);
-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 75%);
+-webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 85%);
+clip-path: polygon(0 0, 100% 0, 100% 40%, 0 85%);
 width: 100%;
 height: 100%;
 margin: 0;
@@ -280,8 +297,8 @@ top: 0;
 z-index: -1;}
 .f-6 .bg {
     background: lightsalmon;
--webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 75%);
-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 75%);
+-webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 85%);
+clip-path: polygon(0 0, 100% 0, 100% 40%, 0 85%);
 width: 100%;
 height: 100%;
 margin: 0;
