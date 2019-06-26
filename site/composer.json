@@ -81,6 +81,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/devel": "^2.1",
+        "drupal/devel_entity_updates": "^1.0",
         "drupal/entity": "^1.0",
         "drupal/inline_entity_form": "^1.0",
         "drupal/metatag": "^1.8",
