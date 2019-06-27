@@ -27,6 +27,7 @@ class ComposerStaticInit534114c995df3e82af5c00b08e0b03dc
         '1ca3bc274755662169f9629d5412a1da' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_uploaded_files.php',
         '40360c0b9b437e69bcbb7f1349ce029e' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
+        'a16312f9300fed4a097923eacb0ba814' => __DIR__ . '/..' . '/igorw/get-in/src/get_in.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '952683d815ff0a7bf322b93c0be7e4e4' => __DIR__ . '/..' . '/chi-teck/drupal-code-generator/src/bootstrap.php',
         '5a12a5271c58108e0aa33355e6ac54ea' => __DIR__ . '/..' . '/drupal/console-core/src/functions.php',
@@ -132,6 +133,7 @@ class ComposerStaticInit534114c995df3e82af5c00b08e0b03dc
         ),
         'I' => 
         array (
+            'Ivory\\HttpAdapter\\' => 18,
             'Interop\\Container\\' => 18,
         ),
         'G' => 
@@ -180,6 +182,7 @@ class ComposerStaticInit534114c995df3e82af5c00b08e0b03dc
             'Consolidation\\AnnotatedCommand\\' => 31,
             'Composer\\Semver\\' => 16,
             'Composer\\Installers\\' => 20,
+            'CommerceGuys\\Addressing\\' => 24,
         ),
         'B' => 
         array (
@@ -425,6 +428,10 @@ class ComposerStaticInit534114c995df3e82af5c00b08e0b03dc
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
         ),
+        'Ivory\\HttpAdapter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/http-adapter/src',
+        ),
         'Interop\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
@@ -572,6 +579,10 @@ class ComposerStaticInit534114c995df3e82af5c00b08e0b03dc
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
+        'CommerceGuys\\Addressing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/commerceguys/addressing/src',
+        ),
         'Brumann\\Polyfill\\' => 
         array (
             0 => __DIR__ . '/..' . '/brumann/polyfill-unserialize/src',
@@ -630,6 +641,13 @@ class ComposerStaticInit534114c995df3e82af5c00b08e0b03dc
             'PEAR' => 
             array (
                 0 => __DIR__ . '/..' . '/pear/pear_exception',
+            ),
+        ),
+        'G' => 
+        array (
+            'Geocoder' => 
+            array (
+                0 => __DIR__ . '/..' . '/willdurand/geocoder/src',
             ),
         ),
         'E' => 
@@ -1241,6 +1259,7 @@ class ComposerStaticInit534114c995df3e82af5c00b08e0b03dc
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
+        'geoPHP' => __DIR__ . '/..' . '/phayes/geophp/geoPHP.inc',
     );
 
     public static function getInitializer(ClassLoader $loader)
