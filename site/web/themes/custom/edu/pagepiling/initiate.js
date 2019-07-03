@@ -11,14 +11,13 @@
 			if(index == 1 && direction =='down'){
                 //alert("Going to section 2!");
                 $('header').css({'display':'inline-grid'});
-                $('footer').css({'color':'black'});
 
 			}
 
 			else if(index == 2 && direction == 'up'){
                 //alert("Going to section 1!");
                 $('header').css({'display':'none'});
-                $('footer').css({'color':'white'});
+
 			}
 		}
             });

@@ -92,6 +92,7 @@
         "drupal/module_filter": "^3.1",
         "drupal/multiple_registration": "^2.84",
         "drupal/profile": "^1.0",
+        "drupal/range": "^1.1",
         "drupal/redirect_after_login": "^2.5",
         "drupal/registration_role_with_approval": "^1.0",
         "drupal/token": "^1.5",

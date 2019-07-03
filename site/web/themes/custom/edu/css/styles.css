@@ -104,6 +104,7 @@ border: solid 1px orange;
 
 .logged-in header {
     padding-top: 28px;
+    display: flex;
 }
 .f-1 .info-details {
 margin: auto;
