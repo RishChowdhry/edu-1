@@ -12,12 +12,4 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-      'form-control',
-  ]
-
-%}
-<div class="col-sm-10">
-<input{{ attributes.addClass(classes) }} />{{ children }}
-</div>
+<input{{ attributes }} />{{ children }}

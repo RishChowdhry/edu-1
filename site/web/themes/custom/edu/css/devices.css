@@ -1,0 +1,11 @@
+@media only screen and (max-width: 1366px) {
+    .login-box {
+        margin: 35px auto 60px;
+    }
+    .login-info {
+        padding: 5px;
+    }
+    .register-box {
+        margin-top: 35px;
+    }
+}

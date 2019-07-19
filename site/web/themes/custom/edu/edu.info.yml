@@ -11,5 +11,7 @@ base theme: false
 regions:
  header: Header
  content: Content
+ sidebar: Sidebar
+ messages: Messages
  footer: Footer
 

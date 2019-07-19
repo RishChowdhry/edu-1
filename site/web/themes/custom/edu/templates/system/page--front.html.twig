@@ -1,3 +1,16 @@
+
+
+{% if logged_in %}
+{% if page.header %}
+<header class="header">
+    {{ page.header }}
+</header>
+{% endif %}
+<div class="container">
+    {{ page.content }}
+ </div>
+
+{% else %}
 {{ attach_library('edu/pagepilling-base') }}
 <div class="page-wrapper" id="pagepiling">
 {% if page.header %}
@@ -10,3 +23,5 @@
 
 
 </div>
+
+{% endif %}
