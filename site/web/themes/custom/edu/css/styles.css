@@ -452,11 +452,6 @@
         color: white;
     }
     
-    .branding {
-        padding-left: 50px;
-        margin-bottom: 40px;
-    }
-    
     .login-form {
         padding: 40px;
     }
@@ -1529,14 +1524,7 @@
         width: 100%;
         z-index: 9;
         background: none!important;
-    }
-    
-    footer {
         padding: 10px;
         text-align: center;
         color: black;
-    }
-    
-    .path-frontpage footer {
-        color: white;
     }
