@@ -1417,7 +1417,6 @@
     .profile-years:before {
         content: "Years:\00a0 "
     }
-    /*.profile-type:before {content: "Profile type:\00a0 "}*/
     
     .profile-type {
         font-size: 1.6em!important;
