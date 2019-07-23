@@ -93,6 +93,7 @@
         "drupal/metatag": "^1.8",
         "drupal/module_filter": "^3.1",
         "drupal/multiple_registration": "^2.84",
+        "drupal/private_message": "^2.0",
         "drupal/profile": "^1.0",
         "drupal/range": "^1.1",
         "drupal/redirect_after_login": "^2.5",
