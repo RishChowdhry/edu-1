@@ -479,12 +479,14 @@ function private_message_preprocess_field__private_message_thread__private_messa
  * depended upon.
  */
 function private_message_preprocess_container(&$vars) {
-  if (strpos('edit-members-wrapper', $vars['element']['#id']) === 0) {
-    // Add a custom class to the private message members widget container.
-    $vars['attributes']['class'][] = 'private_message_members_widget_default_wrapper';
-  }
-  elseif (strpos('edit-message-wrapper', $vars['element']['#id']) === 0) {
-    // Add a custom class to the private message message widget container.
-    $vars['attributes']['class'][] = 'private_message_message_widget_default_wrapper';
+  if (isset($vars['element']['#id'])) {
+    if (strpos('edit-members-wrapper', $vars['element']['#id']) === 0) {
+      // Add a custom class to the private message members widget container.
+      $vars['attributes']['class'][] = 'private_message_members_widget_default_wrapper';
+    }
+    elseif (strpos('edit-message-wrapper', $vars['element']['#id']) === 0) {
+      // Add a custom class to the private message message widget container.
+      $vars['attributes']['class'][] = 'private_message_message_widget_default_wrapper';
+    }
   }
 }
