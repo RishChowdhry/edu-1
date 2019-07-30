@@ -6,9 +6,6 @@
 /*global jQuery, Drupal, drupalSettings, window*/
 /*jslint white:true, this, browser:true*/
 
-Drupal.PrivateMessageInbox = {};
-Drupal.PrivateMessageInbox.updateInbox = {};
-
 (function ($, Drupal, drupalSettings, window) {
 
   "use strict";
@@ -49,9 +46,7 @@ Drupal.PrivateMessageInbox.updateInbox = {};
         success:function (data) {
           loadingNew = false;
           triggerCommands(data);
-          if (updateInterval) {
-            window.setTimeout(updateInbox, updateInterval);
-          }
+          window.setTimeout(updateInbox, updateInterval);
         }
       });
     }
@@ -210,10 +205,6 @@ Drupal.PrivateMessageInbox.updateInbox = {};
 
       Drupal.PrivateMessages.setActiveThread = function (id) {
         setActiveThread(id);
-      };
-
-      Drupal.PrivateMessageInbox.updateInbox = function () {
-        updateInbox();
       };
     },
     detatch:function (context) {

@@ -152,12 +152,4 @@ interface PrivateMessageMapperInterface {
    */
   public function getThreadIdFromMessage(PrivateMessageInterface $privateMessage);
 
-  /**
-   * Retrieve the IDs of all threads in the system.
-   *
-   * @return array
-   *   An array of thread IDs for threads in the system.
-   */
-  public function getThreadIds();
-
 }

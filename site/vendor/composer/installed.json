@@ -4210,135 +4210,6 @@
         }
     },
     {
-        "name": "drupal/message",
-        "version": "1.0.0-rc2",
-        "version_normalized": "1.0.0.0-RC2",
-        "source": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/project/message.git",
-            "reference": "8.x-1.0-rc2"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/message-8.x-1.0-rc2.zip",
-            "reference": "8.x-1.0-rc2",
-            "shasum": "8c74e4e98fd6bfa19728f499dc5f14ce29f5ba17"
-        },
-        "require": {
-            "drupal/core": "*"
-        },
-        "require-dev": {
-            "drupal/coder": "^8.2",
-            "drupal/token": "*"
-        },
-        "type": "drupal-module",
-        "extra": {
-            "branch-alias": {
-                "dev-1.x": "1.x-dev"
-            },
-            "drupal": {
-                "version": "8.x-1.0-rc2",
-                "datestamp": "1524519784",
-                "security-coverage": {
-                    "status": "not-covered",
-                    "message": "RC releases are not covered by Drupal security advisories."
-                }
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packages.drupal.org/8/downloads",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "authors": [
-            {
-                "name": "Grayside",
-                "homepage": "https://www.drupal.org/user/346868"
-            },
-            {
-                "name": "RoySegall",
-                "homepage": "https://www.drupal.org/user/1812910"
-            },
-            {
-                "name": "amitaibu",
-                "homepage": "https://www.drupal.org/user/57511"
-            },
-            {
-                "name": "itamar",
-                "homepage": "https://www.drupal.org/user/1757910"
-            },
-            {
-                "name": "jhedstrom",
-                "homepage": "https://www.drupal.org/user/208732"
-            }
-        ],
-        "description": "Message",
-        "homepage": "https://www.drupal.org/project/message",
-        "support": {
-            "source": "https://git.drupalcode.org/project/message"
-        }
-    },
-    {
-        "name": "drupal/message_notify",
-        "version": "1.0.0-beta1",
-        "version_normalized": "1.0.0.0-beta1",
-        "source": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/project/message_notify.git",
-            "reference": "8.x-1.0-beta1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/message_notify-8.x-1.0-beta1.zip",
-            "reference": "8.x-1.0-beta1",
-            "shasum": "085a628bd859b4fb861bb46a8c8a00d668a248ad"
-        },
-        "require": {
-            "drupal/core": "~8.0",
-            "drupal/message": "~1.0"
-        },
-        "type": "drupal-module",
-        "extra": {
-            "branch-alias": {
-                "dev-1.x": "1.x-dev"
-            },
-            "drupal": {
-                "version": "8.x-1.0-beta1",
-                "datestamp": "1490992382",
-                "security-coverage": {
-                    "status": "not-covered",
-                    "message": "Beta releases are not covered by Drupal security advisories."
-                }
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packages.drupal.org/8/downloads",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "authors": [
-            {
-                "name": "RoySegall",
-                "homepage": "https://www.drupal.org/user/1812910"
-            },
-            {
-                "name": "amitaibu",
-                "homepage": "https://www.drupal.org/user/57511"
-            },
-            {
-                "name": "jhedstrom",
-                "homepage": "https://www.drupal.org/user/208732"
-            }
-        ],
-        "description": "Notification framework for the Message module",
-        "homepage": "https://drupal.org/project/message_notify",
-        "support": {
-            "source": "https://cgit.drupalcode.org/message_notify",
-            "issues": "https://drupal.org/project/issues/message_notify",
-            "irc": "irc://irc.freenode.org/drupal"
-        }
-    },
-    {
         "name": "drupal/metatag",
         "version": "1.8.0",
         "version_normalized": "1.8.0.0",
@@ -4524,39 +4395,33 @@
     },
     {
         "name": "drupal/private_message",
-        "version": "2.0.0-beta15",
-        "version_normalized": "2.0.0.0-beta15",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/private_message.git",
-            "reference": "8.x-2.0-beta15"
+            "reference": "8.x-1.2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/private_message-8.x-2.0-beta15.zip",
-            "reference": "8.x-2.0-beta15",
-            "shasum": "7cb75474946d4db99ea4fefc6a32ba84dcdd439b"
+            "url": "https://ftp.drupal.org/files/projects/private_message-8.x-1.2.zip",
+            "reference": "8.x-1.2",
+            "shasum": "6690079948c3a6f4b36a5ea09bea590cd1db040f"
         },
         "require": {
-            "drupal/core": "*",
-            "drupal/message_notify": "^1.0"
+            "drupal/core": "*"
         },
         "type": "drupal-module",
         "extra": {
             "branch-alias": {
-                "dev-2.x": "2.x-dev"
+                "dev-1.x": "1.x-dev"
             },
             "drupal": {
-                "version": "8.x-2.0-beta15",
-                "datestamp": "1529893424",
+                "version": "8.x-1.2",
+                "datestamp": "1527808680",
                 "security-coverage": {
-                    "status": "not-covered",
-                    "message": "Beta releases are not covered by Drupal security advisories."
-                }
-            },
-            "drush": {
-                "services": {
-                    "drush.services.yml": "^9"
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
                 }
             }
         },
@@ -4567,9 +4432,8 @@
         ],
         "authors": [
             {
-                "name": "Jay Friendly (Jaypan)",
-                "homepage": "https://www.jaypan.com",
-                "role": "Maintainer"
+                "name": "Jaypan",
+                "homepage": "https://www.drupal.org/user/324696"
             },
             {
                 "name": "anmolgoyal74",
@@ -4580,11 +4444,10 @@
                 "homepage": "https://www.drupal.org/user/1621444"
             }
         ],
-        "description": "A private message system for users to send messages to each other.",
-        "homepage": "https://drupal.org/project/private_message",
+        "description": "A private message system for users to send messages to each other",
+        "homepage": "https://www.drupal.org/project/private_message",
         "support": {
-            "source": "https://cgit.drupalcode.org/private_message",
-            "issues": "https://drupal.org/project/issues/private_message"
+            "source": "https://git.drupalcode.org/project/private_message"
         }
     },
     {

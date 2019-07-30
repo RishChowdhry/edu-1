@@ -64,13 +64,6 @@ class AjaxController extends ControllerBase implements AjaxControllerInterface {
   protected $currentUser;
 
   /**
-   * The private message thread manager.
-   *
-   * @var \Drupal\Core\Entity\Sql\SqlContentEntityStorage
-   */
-  protected $threadManager;
-
-  /**
    * The private message service.
    *
    * @var \Drupal\private_message\Service\PrivateMessageServiceInterface
@@ -93,18 +86,10 @@ class AjaxController extends ControllerBase implements AjaxControllerInterface {
    * @param \Drupal\private_message\Service\PrivateMessageServiceInterface $privateMessageService
    *   The private message service.
    */
-  public function __construct(
-    RendererInterface $renderer,
-    RequestStack $requestStack,
-    EntityManagerInterface $entityManager,
-    ConfigFactoryInterface $configFactory,
-    AccountProxyInterface $currentUser,
-    PrivateMessageServiceInterface $privateMessageService
-  ) {
+  public function __construct(RendererInterface $renderer, RequestStack $requestStack, EntityManagerInterface $entityManager, ConfigFactoryInterface $configFactory, AccountProxyInterface $currentUser, PrivateMessageServiceInterface $privateMessageService) {
     $this->renderer = $renderer;
     $this->requestStack = $requestStack;
     $this->entityManager = $entityManager;
-    $this->threadManager = $entityManager->getStorage('private_message_thread');
     $this->configFactory = $configFactory;
     $this->currentUser = $currentUser;
     $this->privateMessageService = $privateMessageService;
@@ -206,21 +191,14 @@ class AjaxController extends ControllerBase implements AjaxControllerInterface {
     $thread_id = $this->requestStack->getCurrentRequest()->get('threadid');
     $message_id = $this->requestStack->getCurrentRequest()->get('messageid');
     if (is_numeric($thread_id) && is_numeric($message_id)) {
-      $thread = $this->threadManager->load($thread_id);
-      if ($thread) {
-        $new_messages = $this->privateMessageService->getNewMessages($thread_id, $message_id);
-        $this->privateMessageService->updateThreadAccessTime($thread);
-        if (count($new_messages)) {
-          $messages = [];
-          $view_builder = $this->entityManager->getViewBuilder('private_message');
-          foreach ($new_messages as $message) {
-            if ($message->access('view', $this->currentUser)) {
-              $messages[] = $view_builder->view($message);
-            }
+      $new_messages = $this->privateMessageService->getNewMessages($thread_id, $message_id);
+      if (count($new_messages)) {
+        $messages = [];
+        $view_builder = $this->entityManager->getViewBuilder('private_message');
+        foreach ($new_messages as $message) {
+          if ($message->access('view', $this->currentUser)) {
+            $messages[] = $view_builder->view($message);
           }
-
-          // Ensure the browser knows the thread ID at all times.
-          $messages['#attached']['drupalSettings']['privateMessageThread']['threadId'] = (int) $thread->id();
         }
 
         $response->addCommand(new PrivateMessageInsertNewMessagesCommand($this->renderer->renderRoot($messages)));

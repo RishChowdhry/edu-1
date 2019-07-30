@@ -6,8 +6,6 @@
 /*global jQuery, Drupal, drupalSettings, window*/
 /*jslint white:true, this, browser:true*/
 
-Drupal.PrivateMessageNotificationBlock = {};
-
 (function ($, Drupal, drupalSettings, window) {
 
   "use strict";
@@ -38,38 +36,12 @@ Drupal.PrivateMessageNotificationBlock = {};
     }
 
     notificationWrapper.find(".private-message-page-link").text(unreadThreadCount);
-
-    // Get the current page title.
-    var pageTitle = $("title").text();
-    // Check if there are any unread threads.
-    if (unreadThreadCount) {
-      // Check if the unread thread count is already in the page title.
-      if (pageTitle.match(/^\(\d+\)\s/)) {
-        // Update the unread thread count in the page title.
-        pageTitle = pageTitle.replace(/^\(\d+\)\s/, "(" + unreadThreadCount + ") ");
-      }
-      else {
-        // Add the unread thread count to the URL.
-        pageTitle = "(" + unreadThreadCount + ") " + pageTitle;
-      }
-    }
-    // No unread messages.
-    else {
-      // Check if thread count currently exists in the page title.
-      if (pageTitle.match(/^\(\d+\)\s/)) {
-        // Remove the unread thread count from the page title.
-        pageTitle = pageTitle.replace(/^\(\d+\)\s/, "");
-      }
-    }
-
-    // Set the updated title.
-    $("title").text(pageTitle);
   }
 
   /**
    * Retrieve the new unread thread count from the server using AJAX.
    */
-  function getUnreadThreadCount() {
+  function checkCount() {
     if (!checkingCount) {
       checkingCount = true;
 
@@ -79,17 +51,11 @@ Drupal.PrivateMessageNotificationBlock = {};
           triggerCommands(data);
 
           checkingCount = false;
-          if (refreshRate) {
-            window.setTimeout(getUnreadThreadCount, refreshRate);
-          }
+          window.setTimeout(checkCount, refreshRate);
         }
       });
     }
   }
-
-  Drupal.PrivateMessageNotificationBlock.getUnreadThreadCount = function () {
-    getUnreadThreadCount();
-  };
 
   /**
    * Initializes the script.
@@ -98,12 +64,11 @@ Drupal.PrivateMessageNotificationBlock = {};
     if (!initialized) {
       initialized = true;
 
-      notificationWrapper = $(".private-message-notification-wrapper");
-
       if (drupalSettings.privateMessageNotificationBlock.ajaxRefreshRate) {
+        notificationWrapper = $(".private-message-notification-wrapper");
         refreshRate = drupalSettings.privateMessageNotificationBlock.ajaxRefreshRate * 1000;
         if (refreshRate) {
-          window.setTimeout(getUnreadThreadCount, refreshRate);
+          window.setTimeout(checkCount, refreshRate);
         }
       }
     }

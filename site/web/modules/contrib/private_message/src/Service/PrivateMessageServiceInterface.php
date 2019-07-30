@@ -2,10 +2,7 @@
 
 namespace Drupal\private_message\Service;
 
-use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\private_message\Entity\PrivateMessageInterface;
-use Drupal\private_message\Entity\PrivateMessageThreadInterface;
 use Drupal\user\UserInterface;
 
 /**
@@ -168,14 +165,6 @@ interface PrivateMessageServiceInterface {
   public function updateLastCheckTime();
 
   /**
-   * Updates the last access time for the current user on the given thread.
-   *
-   * @param \Drupal\private_message\Entity\PrivateMessageThreadInterface $thread
-   *   The thread whose access time should be updated.
-   */
-  public function updateThreadAccessTime(PrivateMessageThreadInterface $thread);
-
-  /**
    * Load the thread that a private message belongs to.
    *
    * @param \Drupal\private_message\Entity\PrivateMessageInterface $privateMessage
@@ -186,28 +175,5 @@ interface PrivateMessageServiceInterface {
    *   The private message thread to which the private message belongs
    */
   public function getThreadFromMessage(PrivateMessageInterface $privateMessage);
-
-  /**
-   * Add a link to send a private message to the owner of the given entity.
-   *
-   * @param array $build
-   *   A render array representing the given entity. Chances should be made to
-   *   this render array.
-   * @param \Drupal\Core\Entity\EntityInterface $entity
-   *   The entity being rendered.
-   * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
-   *   The display being used to render the entity.
-   * @param string $view_mode
-   *   The view mode being used to render the entity.
-   */
-  public function createRenderablePrivateMessageThreadLink(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode);
-
-  /**
-   * Retrieve the IDs of all threads in the system.
-   *
-   * @return array
-   *   An array of thread IDs for threads in the system.
-   */
-  public function getThreadIds();
 
 }

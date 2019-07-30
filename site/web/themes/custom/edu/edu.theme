@@ -27,6 +27,31 @@ function edu_theme_suggestions_page_alter(array &$suggestions, array $variables)
 
  }
 
+ /**
+ * Implements hook_theme_suggestions_user_alter().
+ *
+ *   An array of alternate, more specific names for template files or theme
+ *   functions.
+ */
+function edu_theme_suggestions_user_alter(&$suggestions, $vars, $hook) {
+
+  // Define the view mode.
+  $mode = $vars['elements']['#view_mode'];
+
+  // Create a theme hook suggestion which has the view mode name in it.
+  $suggestions[] = 'user__' . $mode;
+}
+/**
+ * Implements form hook_theme_suggestions_HOOK_alter().
+ */
+
+function edu_theme_suggestions_private_message_thread_alter (array &$suggestions, array $variables) {
+
+$mode = $variables ['elements']['#view_mode'];
+        $suggestions [] = 'private_message_thread__' . $mode ;
+  
+}
+
 
 /**
  * Implements hook_page_attachments_alter().

@@ -1,0 +1,1245 @@
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);*/
+
+
+/*html,
+body,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div,
+pre,
+label {
+    /*font-family: 'Roboto', sans-serif;
+}*/
+
+a:hover,
+a:focus,
+.full-width-bg a:hover,
+.full-width-bg a:focus {
+    text-decoration: none !important;
+}
+
+.full-width-bg {
+    background: rgb(44, 58, 77);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, .1);
+}
+
+.full-width-bg a {
+    text-decoration: none;
+    color: white;
+}
+
+.full-width-bg a:hover,
+.full-width-bg a:active,
+.full-width-bg a:focus {
+    color: #ddd;
+}
+
+a {
+    text-decoration: none;
+    border: none;
+}
+
+#main-wrapper {
+    margin-top: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-decoration: none;
+}
+
+.highlighted {
+    padding: 20px 10px 45px;
+}
+
+.sidebar h2:after,
+.site-footer__top h2:after,
+#featured-bottom-wrapper h2:after,
+.featured-top h2:after,
+.highlighted h2:after {
+    display: block;
+    width: 30px;
+    border-top: 1px solid #4fb7ff;
+    margin-top: 10px;
+    content: "";
+}
+
+.view-content-recent ul {
+    padding: 0px;
+}
+
+.view-content-recent ul li {
+    list-style-type: none;
+    padding: 1px;
+}
+
+.view-content-recent .views-field-title,
+.view-content-recent .views-field-changed {
+    display: inline-block;
+}
+
+.view-content-recent .views-field-title {
+    padding-right: 3px;
+    font-size: 15px;
+}
+
+.view-content-recent .views-field-changed {
+    font-size: 10px;
+}
+
+.view-content-recent ul li:before {
+    content: "\2b";
+    font-family: 'Glyphicons Halflings';
+    font-size: 10px;
+    float: left;
+    font-weight: bold;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 10px 0px 0px;
+}
+
+.view-comments-recent ul li {
+    list-style-type: none;
+    padding: 1px;
+}
+
+.view-comments-recent ul li:before {
+    content: "\f075";
+    font-family: 'FontAwesome';
+    font-size: 18px;
+    float: left;
+    font-weight: bold;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 10px 0px 0px;
+}
+
+.featured-top ul.menu a.is-active,
+#featured-bottom-wrapper ul.menu a.is-active {
+    color: #333;
+}
+
+header#header {
+    box-shadow: 0 4px 5px rgba(0, 0, 0, .1);
+}
+
+#logo img,
+.site-logo img {
+    max-width: 100px !important;
+}
+
+.nav .open>a,
+.nav .open>a:hover,
+.nav .open>a:focus {
+    background-color: #2C3A4D;
+    color: #fff;
+}
+
+.navbar-nav>li>a {
+    color: #3b3b3b;
+    font-size: 15px;
+}
+
+.navbar-nav>li>a.is-active {
+    color: #4badef;
+}
+
+.nav>li>a:hover,
+.nav>li>a:focus {
+    background-color: white;
+    color: #4badef;
+    cursor: pointer;
+}
+
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+    background-color: #4badef;
+    color: #fff;
+}
+
+.dropdown-menu>li>a {
+    padding: 5px 20px !important;
+}
+
+.navbar-nav>li>.dropdown-menu {
+    padding: 0px;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-toggle {
+    background-color: #ccc;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: #1B2738;
+}
+
+.navbar-collapse.collapse {
+    padding: 0px;
+}
+
+.sidebar #search-block-form input.form-submit,
+.sidebar #search-form input.form-submit,
+#search-block-form input.form-submit,
+#search-form input.form-submit {
+    height: 40px;
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 2px;
+    background: rgb(75, 173, 239);
+    color: white;
+    border: none;
+    margin: 15px 0px;
+    text-indent: 0px;
+    font-size: 16px;
+}
+
+#search-form input.form-submit {
+    margin: 0px;
+}
+
+#search-block-form input.form-submit,
+#search-form input.form-submit {
+    width: 30%;
+}
+
+#search-block-form input.form-submit:hover,
+#search-form input.form-submit:hover,
+#search-block-form input.form-submit:active,
+#search-form input.form-submit:active,
+#search-block-form input.form-submit:focus,
+#search-form input.form-submit:focus {
+    background: rgb(68, 147, 201);
+}
+
+ul.menu a.is-active {
+    color: #4BADEF;
+}
+
+label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #6d6d6d;
+    display: block;
+}
+
+.breadcrumb {
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid #eee;
+    margin: 10px 15px;
+}
+
+.breadcrumb a {
+    font-size: 14px;
+    border: none;
+}
+
+input.form-text,
+input.form-tel,
+input.form-email,
+input.form-url,
+input.form-search,
+input.form-file,
+input.form-number,
+input.form-color,
+select.form-select {
+    height: 40px;
+    width: auto;
+}
+
+select.form-select {
+    background: white;
+}
+
+.node__title {
+    margin-bottom: 10px !important;
+}
+
+.node__title a,
+node__title a:hover,
+node__title a:focus {
+    color: #333;
+}
+
+.field .field-label {
+    font-weight: normal;
+}
+
+#edit-submit {
+    font-size: 14px;
+}
+
+.block-user .item-list li {
+    list-style: none;
+}
+
+.sub-footer {
+    background: rgb(27, 39, 56);
+}
+
+.sub-footer p {
+    margin: 0px;
+}
+
+#logo,
+#name-and-slogan {
+    display: inline-block;
+}
+
+#featured-bottom-wrapper .menu-item a,
+.featured-top .menu-item a {
+    color: white;
+    display: block;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+strong {
+    font-weight: 500;
+}
+
+.form-composite>.fieldset-wrapper>.description,
+.form-item .description {
+    color: #999;
+    padding-top: 5px;
+}
+
+.pager li>a,
+.pager li>span {
+    border-radius: 2px;
+    border: 1px solid #e0e0e0;
+}
+
+.pager li>a:hover,
+.pager li>a:focus {
+    color: white;
+    background-color: rgb(75, 173, 239);
+}
+
+.messages--error {
+    color: #DB3613;
+    box-shadow: -8px 0 0 #EA2800;
+}
+
+.messages {
+    border: none;
+    border-radius: 0px;
+}
+
+.label {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.password-strength__meter {
+    background: #D1D6DA;
+}
+
+.node-readmore a:before {
+    content: "\f0fe";
+}
+
+.node-readmore a,
+.comment-add a {
+    color: #4BADEF;
+    font-size: 12px;
+}
+
+.node--view-mode-teaser .field--type-image {
+    float: left;
+    margin-right: 10px;
+}
+
+.node-readmore a:before,
+.comment-add a:before,
+.field-name-field-tags .links.field-items:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 3px 5px;
+}
+
+.comment-add a:before {
+    content: "\f075";
+}
+
+.field-name-field-tags .links.field-items:before {
+    content: "\f02c";
+    float: left;
+    color: #6d6d6d;
+    padding-top: 4px;
+    font-size: 12px;
+}
+
+.field-name-field-tags .links.field-items a {
+    font-size: 12px;
+}
+
+.field-name-field-tags h3.field-label {
+    display: none;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    margin-top: 0;
+}
+
+.carousel-control {
+    font-size: 5em;
+    top: 50%;
+    line-height: 0;
+}
+
+#block-integrity-branding {
+    float: left;
+}
+
+.slice {
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+.menu--main,
+.block-menu .navigation {
+    display: inline-block;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    background: none;
+}
+
+.icon-feature {
+    font-size: 68px;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+}
+
+.credited {
+    color: #9D9898;
+    padding-bottom: 20px;
+}
+
+.credited a {
+    color: #F2E6E6;
+}
+
+.site-footer .menu-item a {
+    color: #4493C9;
+}
+
+.site-footer .menu-item a:hover {
+    text-decoration: underline !important;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    padding: 0px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    content: "\e080";
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-size: 10px;
+    float: right;
+    margin-top: 5px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+.navbar-nav li:last-child>.dropdown-menu {
+    left: auto;
+    right: 0px;
+}
+
+.navbar-nav li:last-child>.dropdown-menu a {
+    text-align: right !important;
+}
+
+.navbar-nav li:last-child>.dropdown-menu .dropdown-submenu>a:after {
+    float: left;
+    content: "\e079";
+}
+
+.navbar-nav li:last-child>.dropdown-menu .dropdown-submenu>.dropdown-menu {
+    left: -100%;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+
+/* Secondary region */
+
+.region-secondary-menu .navigation.menu--account {
+    display: inline-block;
+}
+
+.region-secondary-menu .search-block-form input {
+    height: 30px !important;
+}
+
+.region-secondary-menu .search-block-form {
+    float: right;
+}
+
+.region-secondary-menu .search-block-form #edit-actions {
+    display: inline-block;
+    padding: 0px;
+}
+
+.region-secondary-menu .search-block-form #edit-submit {
+    width: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@media(min-width: 0px) and (max-width: 767px) {
+    .navbar-collapse,
+    .navbar-header {
+        width: 100%;
+    }
+    .dropdown:hover>.dropdown-menu,
+    .dropdown-submenu>.dropdown-menu {
+        position: inherit;
+        float: none;
+        left: 0;
+    }
+}
+
+
+/* POST LOGIN */
+
+.path-private-messages #main {
+    background-color: #fff;
+}
+
+.path-private-messages .page-title {
+    text-align: center;
+    margin: 20px 0 10px;
+    font-size: 24px;
+}
+
+
+/* RIGHT SIDE */
+
+.main-content .private-message-wrapper {
+    float: left;
+    width: 100%;
+}
+
+
+/* .main-content .private-message-wrapper .private-message */
+
+.main-content .private-message {
+    border: none !important;
+    margin-bottom: 25px !important;
+    float: left;
+    width: 100%;
+}
+
+.main-content .private-message-thread .field--name-owner {
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #999;
+    float: left;
+    margin-right: 15px;
+    position: absolute;
+    height: 60px;
+    text-align: center;
+}
+
+.main-content .private-message-thread .field--name-owner .field__item {
+    padding: 0;
+}
+
+.main-content .private-message-thread .field--name-owner .username a {
+    color: #fff;
+    line-height: 1;
+    padding-top: 20px;
+    display: block;
+}
+
+.main-content .private-message-thread .field--name-owner .field--name-user-picture img {
+    min-height: 60px;
+    object-fit: cover;
+}
+
+.main-content .private-message-thread .private-message-author-self .field--name-owner {
+    right: 0;
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+.main-content .private-message-wrapper .field--name-message {
+    margin: 0;
+    color: #646464;
+    font-size: 14px;
+    width: 100%;
+    padding-left: 80px;
+    max-width: 500px;
+}
+
+.main-content .private-message-wrapper .private-message-author-self .field--name-message {
+    float: right;
+    padding-left: 0;
+    padding-right: 80px;
+}
+
+.main-content .private-message-wrapper .field--name-message p {
+    background-color: #ebebeb;
+    padding: 5px 10px 5px 12px;
+    border-radius: 3px;
+    margin: 0;
+}
+
+.main-content .private-message-wrapper .private-message-author-self .field--name-message p {
+    background-color: #05728f;
+    color: #fff;
+}
+
+.main-content .private-message-wrapper .field--name-created {
+    color: #747474;
+    display: block;
+    font-size: 12px;
+    margin: 8px 0 0;
+    width: 100%;
+    text-align: left;
+    padding-left: 80px;
+}
+
+.main-content .private-message-wrapper .private-message-author-self .field--name-created {
+    padding-left: 0;
+    padding-right: 80px;
+    text-align: right;
+}
+
+
+/* seft autor */
+
+.main-content .field--name-private-messages>.private-message-author-self {
+    float: left;
+    width: 100%;
+    border: none !important;
+}
+
+.main-content .field--name-private-messages>.private-message-author-self .field--name-owner .field__label {
+    display: none;
+}
+
+.main-content .field--name-private-messages>.private-message-author-self .field--name-owner {
+    min-height: 60px;
+    overflow: hidden;
+    background-image: url("/sites/default/files/styles/thumbnail/public/default_images/default-avatar.png");
+    /* text-indent: -999px; */
+    background-size: cover;
+}
+
+.main-content .field--name-private-messages>.private-message-author-self .field--name-message {
+    float: right;
+    padding-left: 0;
+    padding-right: 80px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.main-content .field--name-private-messages>.private-message-author-self .field--name-message p {
+    background-color: #05728f;
+    color: #fff;
+    padding: 5px 10px 5px 12px;
+    border-radius: 3px;
+    margin: 0;
+}
+
+.main-content .field--name-private-messages>.private-message-author-self .field--name-created {
+    padding-left: 0;
+    padding-right: 80px;
+    text-align: right;
+    color: #747474;
+    display: block;
+    font-size: 12px;
+    margin: 8px 0 0;
+    width: 100%;
+}
+
+
+/* seft autor end*/
+
+
+/* private-message-author-other */
+
+.main-content .field--name-private-messages>.private-message-author-other {
+    float: left;
+    width: 100%;
+    border: none !important;
+}
+
+.main-content .field--name-private-messages>.private-message-author-other .field--name-owner .field__label {
+    display: none;
+}
+
+.main-content .field--name-private-messages>.private-message-author-other.field--name-owner {
+    min-height: 60px;
+    overflow: hidden;
+    background-image: url("/sites/default/files/styles/thumbnail/public/default_images/default-avatar.png");
+    text-indent: -999px;
+    background-size: cover;
+}
+
+.main-content .field--name-private-messages>.private-message-author-other .field--name-message {
+    float: left;
+    padding-left: 80px;
+    padding-right: 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+.main-content .field--name-private-messages>.private-message-author-other .field--name-message p {
+    background-color: #ebebeb;
+    color: #646464;
+    padding: 5px 10px 5px 12px;
+    border-radius: 3px;
+    margin: 0;
+}
+
+.main-content .field--name-private-messages>.private-message-author-other .field--name-created {
+    padding-left: 80px;
+    text-align: left;
+    color: #747474;
+    display: block;
+    font-size: 12px;
+    margin: 8px 0 0;
+    width: 100%;
+}
+
+
+/*  private-message-author-other end*/
+
+
+/* edit form */
+
+.private-message-add-form .filter-wrapper {
+    display: none;
+}
+
+.private-message-add-form .form-textarea-wrapper .form-textarea {
+    font-size: 15px;
+    color: #4c4c4c;
+}
+
+.private-message-add-form .form-actions {
+    text-align: right;
+    padding: 0;
+}
+
+.private-message-add-form .form-actions input[type="submit"] {
+    background-image: url('../images/paper-plane.png');
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent;
+    margin-right: 0 !important;
+}
+
+#private-message-page #load-previous-messages-button-wrapper {
+    text-align: center;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+#private-message-page .private_message_thread_delete_link_wrapper {
+    text-align: right;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+/* LEFT SIDE */
+
+.sidebar .block.block-private-message.block-private-message-inbox-block {
+    background-color: #f8f8f8;
+    border: 1px solid #c4c4c4;
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+    width: 100%;
+}
+
+.block-private-message-inbox-block .private-message-thread:hover {
+    background-color: #ebebeb;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block h2 {
+    color: #05728f;
+    font-size: 21px;
+    text-transform: capitalize;
+    padding: 0 10px;
+    float: left;
+    width: 100%;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block h2:after {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread {
+    border: 1px solid #c4c4c4;
+    float: left;
+    width: 100%;
+    padding: 15px 10px;
+    border-left: none;
+    border-right: none;
+    margin-bottom: -1px;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread.active-thread {
+    background: #ebebeb;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread:last-child {
+    margin-bottom: 10px;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread .field--name-owner,
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread .field--name-user-picture {
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #999;
+    position: absolute;
+    top: 10px;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread .field--name-user-picture img {
+    min-height: 40px;
+    object-fit: cover;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread .field--name-created {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: 800;
+    color: #464646;
+    font-size: 13px;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread .field--name-message {
+    padding-left: 50px;
+    margin-top: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread .field--name-message img {
+    max-width: 80px;
+    float: left;
+    padding-top: 24px;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread .private-message-recipients .username {
+    margin: 0;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread .private-message-recipients .username a {
+    padding-left: 50px;
+    font-size: 15px;
+    color: #464646;
+    font-weight: 500;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.block-private-message-inbox-block #load-previous-threads-button-wrapper a {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+
+/* 2 dec */
+
+.block-private-message-notification-block {
+    height: 36px;
+    width: 35.5px;
+    border-color: #fff !important;
+    background-color: transparent !important;
+    float: right;
+    /* position: absolute; */
+    right: 104px;
+    top: 30px;
+}
+
+.block-private-message-notification-block h2 {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    clip: rect(0px, 0px, 0px, 0px);
+}
+
+.path-private-message #main {
+    background-color: #fff;
+}
+
+.region-sidebar-first .block-private-message.block-private-message-inbox-block .private-message-thread .field--name-owner .field--name-user-picture img {
+    min-height: 40px;
+    object-fit: cover;
+}
+
+
+/* RANGE SLIDER */
+
+.view-duplicate-of-search-result .views-exposed-form {
+    margin: 30px 0;
+}
+
+.view-duplicate-of-search-result .views-exposed-form .form--inline {
+    text-align: left;
+    margin: 0 -15px;
+}
+
+.view-duplicate-of-search-result .views-exposed-form .form-item,
+.view-duplicate-of-search-result .views-exposed-form .form-actions {
+    width: 210px;
+    box-sizing: border-box;
+    vertical-align: top;
+    float: none !important;
+    display: inline-block;
+    margin: 15px 0 30px 0;
+    padding: 0 15px 0;
+    position: relative;
+}
+
+.view-duplicate-of-search-result .views-exposed-form .form-item label {
+    position: absolute;
+    top: -30px;
+}
+
+.view-duplicate-of-search-result .views-exposed-form .form-item-field-hourly-rate-value label {
+    left: 0;
+}
+
+.view-duplicate-of-search-result .views-exposed-form .form-item input {
+    height: 35px;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.view-duplicate-of-search-result .views-exposed-form .form-actions input[type="submit"] {
+    background-color: rgb(66, 139, 202);
+    border-color: rgb(66, 139, 202);
+    padding: 0px 15px;
+    height: 35px;
+    line-height: 1.1;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+
+/* range */
+
+.view-duplicate-of-search-result .views-exposed-form .form-item-field-hourly-rate-value {
+    background-color: #fff;
+    border: 1px solid #cccc;
+    border-radius: 3px;
+    margin-left: 15px;
+    margin-right: 15px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    height: 35px;
+}
+
+.view-duplicate-of-search-result .views-exposed-form #edit-field-hourly-rate-value {
+    text-align: center;
+    width: 40px;
+    float: right;
+    background-color: rgb(66, 139, 202);
+    color: #fff;
+    position: absolute;
+    right: 3px;
+    border: none;
+    height: 28px;
+    margin-top: 3px;
+    border-radius: 0 3px 3px 0px;
+}
+
+.view-duplicate-of-search-result .views-exposed-form .ui-slider {
+    left: 0;
+    width: 130px;
+    bottom: 0;
+    border: none;
+    height: 35px;
+    background: transparent;
+}
+
+.view-duplicate-of-search-result .views-exposed-form .ui-slider .ui-slider-handle {
+    background-color: rgb(66, 139, 202);
+    border: none;
+    width: 12px;
+    top: 5px;
+    height: 24px;
+    cursor: pointer;
+    cursor: grab;
+}
+
+
+/* mobi layout */
+
+@media only screen and (max-width:767px) {
+    .view-duplicate-of-search-result .views-exposed-form .form-item,
+    .views-exposed-form .form-actions {
+        width: 100%;
+        padding: 0;
+    }
+    .view-duplicate-of-search-result .views-exposed-form .form--inline {
+        padding: 0 30px;
+    }
+    .view-duplicate-of-search-result .views-exposed-form .form-item-field-hourly-rate-value {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .view-duplicate-of-search-result .views-exposed-form .form-item-field-hourly-rate-value {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .view-duplicate-of-search-result .views-exposed-form .ui-slider {
+        left: 15px;
+    }
+    .view-duplicate-of-search-result .views-exposed-form .form-actions {
+        margin: 0;
+    }
+    .bef-exposed-form .details-wrapper .form-item {
+        width: 100% !important;
+    }
+    .bef-exposed-form .details-wrapper input,
+    .bef-slider {
+        width: 100% !important;
+    }
+}
+
+
+/* find-lesson page */
+
+.page-title,
+.profile-main-content h3 {
+    font-family: 'Raleway', sans-serif !important;
+    color: #161616;
+    font-size: 24px !important;
+}
+
+#block-integrity-content .form-item {
+    float: none;
+}
+
+.bef-exposed-form input.form-text {
+    width: 100%;
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    border: 1px solid #E4E4E4;
+    box-shadow: none;
+}
+
+.bef-exposed-form details {
+    border: none;
+    float: right;
+}
+
+.bef-exposed-form summary {
+    background: transparent;
+    color: #5a5a5a;
+    float: right;
+}
+
+.bef-exposed-form .details-wrapper {
+    text-align: left;
+    background: #fff;
+    box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.1);
+    float: left;
+    width: 100%;
+}
+
+.bef-exposed-form .details-wrapper .form-item {
+    float: left !important;
+    width: 50%;
+    margin: 16px 0;
+}
+
+.bef-exposed-form .details-wrapper input,
+.bef-slider {
+    width: 95%;
+}
+
+
+/* button */
+
+.bef-exposed-form .form-actions {
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.bef-exposed-form .form-submit {
+    background: #0076B6;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+
+/* /private_message page */
+
+.private-message-add-form .form-textarea-wrapper .form-textarea {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+.file--application-pdf {
+    background-size: 25px;
+}
+
+.file--application-pdf a {
+    color: #fff;
+    margin-left: 8px;
+}
+
+.description {
+    display: none;
+}
+
+
+/* custom file input */
+
+.form-managed-file {
+    background-image: url("/sites/default/files/plus-icon.png");
+    background-size: 30px;
+    width: 155px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    position: relative;
+    background-color: #4BADEF;
+    /*background-position: left center;*/
+    border-radius: 3px;
+    background-position: 6px;
+}
+
+.form-managed-file input[type="file"] {
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-managed-file:after {
+    content: "Upload file";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0 13px 45px;
+    color: #fff;
+}
+
+
+/* dashboard */
+
+.views-table .views-field-webform-submission-value-2 a {
+    color: #428bca;
+}
+
+
+/* profile page */
+
+.profile-main-content p {
+    color: #888;
+    line-height: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.review .name {
+    margin-bottom: 10px;
+}
+
+.review p {
+    color: #888;
+    line-height: 25px;
+    border-left: 4px solid #205990;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 12px;
+}
+
+#block-mainnavigation {
+    margin-top: 22px;
+}
+
+#block-useraccountmenu ul li.menu-item {
+    float: right;
+    list-style: none;
+    padding: 30px 19px;
+    margin: 0px 1px;
+    width: auto;
+    height: auto;
+    overflow: visible;
+}
+
+#block-useraccountmenu ul li.menu-item a {
+    color: white;
+}

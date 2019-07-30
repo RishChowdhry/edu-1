@@ -1,0 +1,33 @@
+{#
+    @file:
+
+    Simple page
+#}
+
+
+
+
+
+{% if page.header %}
+<header class="header">
+    {{ page.header }}
+    </header>
+{% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                    {{ page.content }}
+            </div>
+            <div class="col-md-3">
+                    {{ page.sidebar }}
+            </div>
+        </div>
+    </div>
+
+{% if page.footer %}
+
+<footer>
+    {{ page.footer }}
+</footer>
+
+{% endif %}

@@ -277,11 +277,4 @@ class PrivateMessageMapper implements PrivateMessageMapperInterface {
     )->fetchField();
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function getThreadIds() {
-    return $this->database->query('SELECT id FROM {private_message_threads}')->fetchCol();
-  }
-
 }
