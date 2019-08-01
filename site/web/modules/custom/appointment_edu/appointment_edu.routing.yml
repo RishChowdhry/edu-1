@@ -1,0 +1,35 @@
+appointment_edu.appointment_edu_controller_display:
+  path: '/appointment_edu'
+  defaults:
+    _controller: '\Drupal\appointment_edu\Controller\Appointment_eduController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+appointment_edu.appointment_edu_form:
+  path: '/appointment_edu/form/appointment_edu'
+  defaults:
+    _form: '\Drupal\appointment_edu\Form\Appointment_eduForm'
+    _title: 'Appointment_eduForm'
+  requirements:
+    _access: 'TRUE'
+
+
+appointment_edu.display_table_controller_display:
+  path: '/appointment_edu/appointment/table'
+  defaults:
+    _controller: '\Drupal\appointment_edu\Controller\DisplayTableController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+
+
+appointment_edu.delete_form:
+  path: '/appointment_edu/form/delete/{cid}'
+  defaults:
+    _form: '\Drupal\appointment_edu\Form\DeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _access: 'TRUE'
+
