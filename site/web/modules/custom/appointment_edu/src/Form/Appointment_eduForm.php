@@ -77,7 +77,7 @@ class Appointment_eduForm extends FormBase {
         ),
       );
 
-    $form['web_site'] = array (
+    $form['note'] = array (
       '#type' => 'textfield',
       '#title' => t('Note.'),
       '#default_value' => (isset($record['note']) && $_GET['num']) ? $record['note']:'',
@@ -89,7 +89,7 @@ class Appointment_eduForm extends FormBase {
       '#default_value' => (isset($record['appointment_date']) && $_GET['num']) ? $record['appointment_date']:'',
        );
 
-    $form['appointment_saveas '] = array (
+    $form['appointment_saveas'] = array (
       '#type' => 'select',
       '#title' => ('Appointment Save As '),
       '#options' => array(
@@ -150,6 +150,8 @@ class Appointment_eduForm extends FormBase {
     $age=$field['candidate_age'];
     $gender=$field['candidate_gender'];
     $note=$field['note'];
+    $appointment_date=$field['appointment_date'];
+    $appointment_saveas=$field['appointment_saveas'];
 
     /*$insert = array('name' => $name, 'mobilenumber' => $number, 'email' => $email, 'age' => $age, 'gender' => $gender, 'note' => $note);
     db_insert('appointment_edu')
@@ -173,6 +175,8 @@ class Appointment_eduForm extends FormBase {
               'age' => $age,
               'gender' => $gender,
               'note' => $note,
+              'appointment_date' => $appointment_date,
+              'appointment_saveas' => $appointment_saveas,
           );
           $query = \Drupal::database();
           $query->update('appointment_edu_booking')
@@ -193,6 +197,8 @@ class Appointment_eduForm extends FormBase {
               'age' => $age,
               'gender' => $gender,
               'note' => $note,
+              'appointment_date' => $appointment_date,
+              'appointment_saveas' => $appointment_saveas,
           );
            $query = \Drupal::database();
            $query ->insert('appointment_edu_booking')
