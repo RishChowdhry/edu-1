@@ -21,9 +21,9 @@ class Appointment_eduBlock extends BlockBase {
     ////$build = [];
     //$build['appointment_edu_block']['#markup'] = 'Implement appointment_eduBlock.';
 
-    $form = \Drupal::formBuilder()->getForm('Drupal\appointment_edu\Form\appointment_eduForm');
-
-    return $form;
+    $builtForm = \Drupal::formBuilder()->getForm('Drupal\appointment_edu\Form\appointment_eduForm');
+    $renderArray['form'] = $builtForm;
+    return $renderArray;
   }
 
 }
