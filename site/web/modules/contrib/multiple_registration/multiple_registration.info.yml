@@ -5,8 +5,8 @@ description: Adds ability to create several registration pages
 package: Other
 configure: multiple_registration.multiple_registration_list_index
 
-# Information added by Drupal.org packaging script on 2019-06-07
-version: '8.x-2.84'
+# Information added by Drupal.org packaging script on 2019-07-30
+version: '8.x-2.86'
 core: '8.x'
 project: 'multiple_registration'
-datestamp: 1559896994
+datestamp: 1564494793

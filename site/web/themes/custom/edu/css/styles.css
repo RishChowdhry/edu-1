@@ -860,6 +860,10 @@
         .path-private-messages  h1,.path-private-messages  h2 {
             margin-bottom: 25px;
         }
+
+        .private-message-thread-inbox {
+            
+        }
         
     /*FIND LESSON PAGE*/
 
@@ -1308,7 +1312,10 @@
         width: 100%;
         height: 250px;
         padding: 0!important;
+        
     }
+    .profile-bg img {max-width: 1170px;
+    height: auto;}
 
     .profile-img {
         margin: 0px 10px 10px 40px;

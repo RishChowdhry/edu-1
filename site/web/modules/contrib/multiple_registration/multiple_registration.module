@@ -19,6 +19,7 @@ use Drupal\Core\Config\Entity\ThirdPartySettingsInterface;
 use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\profile\Entity\Profile;
 use Drupal\profile\Entity\ProfileType;
+use Drupal\Core\Field\WidgetBase;
 
 /**
  * Implements hook_help().
@@ -183,10 +184,14 @@ function multiple_registration_form_alter(&$form, FormStateInterface $form_state
       foreach ($field_definitions as $field_name => $field_definition) {
         if (isset($form[$field_name]) && $field_definition instanceof ThirdPartySettingsInterface) {
           $field_roles = $field_definition->getThirdPartySetting('multiple_registration', 'user_additional_register_form');
+          $field_roles_required = $field_definition->getThirdPartySetting('multiple_registration', 'user_additional_register_form_required');
           if (!empty($field_roles)) {
             // If something was selected.
             if (!(max($field_roles) === 0)) {
               $form[$field_name]['#access'] = MultipleRegistrationController::checkFieldAccess($field_roles);
+            }
+            if (is_array($field_roles_required) && !(max($field_roles_required) === 0)) {
+              $form[$field_name]['widget']['#required'] = MultipleRegistrationController::checkFieldAccess($field_roles_required);
             }
           }
         }
@@ -233,6 +238,9 @@ function _multiple_registration_rid(array $form, FormStateInterface $form_state)
  */
 function multiple_registration_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
   $field_definition = $context['items']->getFieldDefinition();
+  $field_name = $field_definition->getName();
+  $parents = $context['form']['#parents'];
+  $widget_state = WidgetBase::getWidgetState($parents, $field_name, $form_state);
   if ($field_definition->getTargetEntityTypeId() === 'user' && $field_definition instanceof ThirdPartySettingsInterface) {
     if ($field_definition->getThirdPartySetting('multiple_registration', 'user_additional_register_form')) {
       $field_roles = $field_definition->getThirdPartySetting('multiple_registration', 'user_additional_register_form');
@@ -273,7 +281,8 @@ function multiple_registration_field_widget_form_alter(&$element, FormStateInter
           }
         }
         foreach (Element::children($element) as $child) {
-          $element[$child]['#required'] = $required;
+          if ($widget_state['items_count'] === 0 || $element[$child]['#delta'] < $widget_state['items_count'])
+            $element[$child]['#required'] = $required;
         }
       }
     }
