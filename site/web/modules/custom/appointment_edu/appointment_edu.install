@@ -50,17 +50,17 @@ function appointment_edu_schema() {
       'appointment_slot'=>array(
         'type' => 'varchar',
         'length' => 25,
-        'not null' => TRUE,
+        'not null' => FALSE,
       ),
       'appointment_studentuid'=>array(
         'type' => 'varchar',
         'length' => 25,
-        'not null' => TRUE,
+        'not null' => FALSE,
       ),
       'appointment_tutoruid'=>array(
         'type' => 'varchar',
         'length' => 25,
-        'not null' => TRUE,
+        'not null' => FALSE,
       ),
     ),
     'primary key' => array('appointment_id'),
