@@ -67,7 +67,7 @@ function appointment_edu_schema() {
     'primary key' => array('appointment_id'),
   );
 
-  // Slot tutor table.
+  // Slot Tutor Table
   $schema['appointment_edu_booking_slots'] = array(
     'fields' => array(
       'eduslot_id'=>array(
@@ -81,7 +81,12 @@ function appointment_edu_schema() {
       ),
       'appointment_slot'=>array(
         'type' => 'varchar',
-        'length' => 25,
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+      'appointment_capacity'=>array(
+        'type' => 'varchar',
+        'length' => 255,
         'not null' => FALSE,
       ),
        'appointment_subject'=>array(
