@@ -169,19 +169,6 @@ class Appointment_eduForm extends FormBase {
     $appointment_studentuid =$field['appointment_studentuid'];
     $appointment_tutoruid =$field['appointment_tutoruid'];
 
-    /*$insert = array('name' => $name, 'mobilenumber' => $number, 'email' => $email, 'age' => $age, 'gender' => $gender, 'note' => $note);
-    db_insert('appointment_edu')
-    ->fields($insert)
-    ->execute();
-
-    if($insert == TRUE)
-    {
-      drupal_set_message("your application subimitted successfully");
-    }
-    else
-    {
-      drupal_set_message("your application not subimitted ");
-    }*/
 
     if (isset($_GET['num'])) {
           $field  = array(
