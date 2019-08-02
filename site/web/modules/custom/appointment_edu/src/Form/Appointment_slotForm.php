@@ -83,9 +83,6 @@ class Appointment_slotForm extends FormBase {
     */
 
   public function validateForm(array &$form, FormStateInterface $form_state) {
-          // if (strlen($form_state->getValue('mobile_number')) < 10 ) {
-          //   $form_state->setErrorByName('mobile_number', $this->t('your mobile number must in 10 digits'));
-          //  }
     parent::validateForm($form, $form_state);
   }
 
