@@ -27,7 +27,10 @@ class Appointment_eduForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-
+    $uid = \Drupal::currentUser()->id();
+    $current_path = \Drupal::service('path.current')->getPath();
+    $arg  = explode('/',$current_path);
+    $tid = $arg[2];
     $conn = Database::getConnection();
      $record = array();
     if (isset($_GET['num'])) {
@@ -46,7 +49,14 @@ class Appointment_eduForm extends FormBase {
       '#default_value' => (isset($record['name']) && $_GET['num']) ? $record['name']:'',
       );
     //print_r($form);die();
-
+    $form['appointment_studentuid'] = array(
+      '#type' => 'hidden',
+      '#default_value' => $uid,
+    );
+    $form['appointment_tutoruid'] = array(
+      '#type' => 'hidden',
+      '#default_value' => $tid,
+    );
     $form['mobile_number'] = array(
       '#type' => 'textfield',
       '#title' => t('Mobile Number:'),
@@ -54,7 +64,7 @@ class Appointment_eduForm extends FormBase {
       );
 
     $form['candidate_mail'] = array(
-      '#type' => 'email',
+      '#type' => 'textfield',
       '#title' => t('Email ID:'),
       '#required' => TRUE,
       '#default_value' => (isset($record['email']) && $_GET['num']) ? $record['email']:'',
@@ -71,9 +81,10 @@ class Appointment_eduForm extends FormBase {
       '#type' => 'select',
       '#title' => ('Gender'),
       '#options' => array(
+        '#default_value' => (isset($record['gender']) && $_GET['num']) ? $record['gender']:'',
         'Female' => t('Female'),
         'male' => t('Male'),
-        '#default_value' => (isset($record['gender']) && $_GET['num']) ? $record['gender']:'',
+
         ),
       );
 
@@ -84,20 +95,23 @@ class Appointment_eduForm extends FormBase {
        );
 
     $form['appointment_date'] = array (
-      '#type' => 'textfield',
-      '#title' => t('Appointment Date'),
+      '#type' => 'datetime',
+      '#title' => t('Appointment Date.'),
+      '#size' => 20,
       '#default_value' => (isset($record['appointment_date']) && $_GET['num']) ? $record['appointment_date']:'',
+      '#date_date_format' => 'd/m/Y',
+      '#date_time_format' => 'H:m',
        );
 
     $form['appointment_saveas'] = array (
       '#type' => 'select',
       '#title' => ('Appointment Save As '),
       '#options' => array(
+        '#default_value' => (isset($record['appointment_saveas']) && $_GET['num']) ? $record['appointment_saveas']:'',
         'Requested' => t('Requested'),
         'Confirmed' => t('Confirmed'),
         'Rejected' => t('Rejected'),
         'Expired' => t('Expired'),
-        '#default_value' => (isset($record['appointment_saveas']) && $_GET['num']) ? $record['appointment_saveas']:'',
         ),
       );
 
@@ -152,6 +166,8 @@ class Appointment_eduForm extends FormBase {
     $note=$field['note'];
     $appointment_date=$field['appointment_date'];
     $appointment_saveas=$field['appointment_saveas'];
+    $appointment_studentuid =$field['appointment_studentuid'];
+    $appointment_tutoruid =$field['appointment_tutoruid'];
 
     /*$insert = array('name' => $name, 'mobilenumber' => $number, 'email' => $email, 'age' => $age, 'gender' => $gender, 'note' => $note);
     db_insert('appointment_edu')
@@ -175,16 +191,21 @@ class Appointment_eduForm extends FormBase {
               'age' => $age,
               'gender' => $gender,
               'note' => $note,
-              'appointment_date' => $appointment_date,
+              // 'appointment_date' => $appointment_date,
               'appointment_saveas' => $appointment_saveas,
+              //'appointment_studentuid' => $appointment_studentuid,
+              //'appointment_tutoruid' => $appointment_tutoruid,
           );
+          //echo "<pre>"; print_r($field); die();
           $query = \Drupal::database();
           $query->update('appointment_edu_booking')
               ->fields($field)
               ->condition('appointment_id', $_GET['num'])
               ->execute();
           drupal_set_message("succesfully updated");
-          $form_state->setRedirect('appointment_edu.display_table_controller_display');
+          $response = new RedirectResponse("appointment");
+          $response->send();
+          //$form_state->setRedirect('appointment_edu.display_table_controller_display');
 
       }
 
@@ -199,6 +220,8 @@ class Appointment_eduForm extends FormBase {
               'note' => $note,
               'appointment_date' => $appointment_date,
               'appointment_saveas' => $appointment_saveas,
+              'appointment_studentuid' => $appointment_studentuid,
+              'appointment_tutoruid' => $appointment_tutoruid,
           );
            $query = \Drupal::database();
            $query ->insert('appointment_edu_booking')
@@ -206,7 +229,7 @@ class Appointment_eduForm extends FormBase {
                ->execute();
            drupal_set_message("succesfully saved");
 
-           $response = new RedirectResponse("/appointment_edu/appointment/table");
+           $response = new RedirectResponse("appointment");
            $response->send();
        }
      }
